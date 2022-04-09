@@ -50,11 +50,27 @@ namespace SellPoint.forms_screens
             label_pass_vali.BackColor = Color.Transparent;
             uservalidlabel.Parent = pictureBox1;
             uservalidlabel.BackColor = Color.Transparent;
+            
         }
 
-        private void buton_registro_Click(object sender, EventArgs e)
+      
+
+        private void btnlogin_Click(object sender, EventArgs e)
         {
-           
+            if (username_box.Texts == "")
+            {
+                label_validator_username.Visible = true;
+            }
+
+            if (pass_field.Texts == "")
+            {
+                label_pass_vali.Visible = true;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
