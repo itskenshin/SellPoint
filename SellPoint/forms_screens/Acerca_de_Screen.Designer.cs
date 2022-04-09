@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(256, 245);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 208);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Acerca_de_Screen
             // 
@@ -36,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 599);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Name = "Acerca_de_Screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
@@ -43,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
