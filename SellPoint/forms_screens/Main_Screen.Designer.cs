@@ -47,21 +47,21 @@
             // Hora
             // 
             this.Hora.AutoSize = true;
-            this.Hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hora.Location = new System.Drawing.Point(8, 437);
+            this.Hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hora.Location = new System.Drawing.Point(12, 447);
             this.Hora.Name = "Hora";
-            this.Hora.Size = new System.Drawing.Size(55, 24);
+            this.Hora.Size = new System.Drawing.Size(41, 16);
             this.Hora.TabIndex = 1;
             this.Hora.Text = "Hora";
             // 
             // Fecha
             // 
             this.Fecha.AutoSize = true;
-            this.Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Fecha.Location = new System.Drawing.Point(8, 463);
+            this.Fecha.Location = new System.Drawing.Point(12, 467);
             this.Fecha.Name = "Fecha";
-            this.Fecha.Size = new System.Drawing.Size(69, 24);
+            this.Fecha.Size = new System.Drawing.Size(50, 16);
             this.Fecha.TabIndex = 1;
             this.Fecha.Text = "Fecha";
             // 
