@@ -35,10 +35,11 @@
             // 
             // Splashbox
             // 
+            this.Splashbox.BackColor = System.Drawing.SystemColors.Window;
             this.Splashbox.Image = ((System.Drawing.Image)(resources.GetObject("Splashbox.Image")));
-            this.Splashbox.Location = new System.Drawing.Point(1, 1);
+            this.Splashbox.Location = new System.Drawing.Point(1, -1);
             this.Splashbox.Name = "Splashbox";
-            this.Splashbox.Size = new System.Drawing.Size(907, 579);
+            this.Splashbox.Size = new System.Drawing.Size(910, 587);
             this.Splashbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Splashbox.TabIndex = 0;
             this.Splashbox.TabStop = false;
@@ -47,13 +48,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(908, 581);
             this.ControlBox = false;
             this.Controls.Add(this.Splashbox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            
             ((System.ComponentModel.ISupportInitialize)(this.Splashbox)).EndInit();
             this.ResumeLayout(false);
 
