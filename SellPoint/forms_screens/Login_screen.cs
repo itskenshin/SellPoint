@@ -42,19 +42,19 @@ namespace SellPoint.forms_screens
 
         }
 
-        private void username_box_Load(object sender, EventArgs e)
+        private void Login_screen_Load(object sender, EventArgs e)
         {
-
+            label_validator_username.Parent = pictureBox1;
+            label_validator_username.BackColor = Color.Transparent;
+            label_pass_vali.Parent = pictureBox1;
+            label_pass_vali.BackColor = Color.Transparent;
+            uservalidlabel.Parent = pictureBox1;
+            uservalidlabel.BackColor = Color.Transparent;
         }
 
-        private void username_box_Load_1(object sender, EventArgs e)
+        private void buton_registro_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pass_field_Load(object sender, EventArgs e)
-        {
-
+           
         }
     }
 }
