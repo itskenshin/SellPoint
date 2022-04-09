@@ -31,8 +31,8 @@ namespace SellPoint.forms_screens
 
         private void HoraFecha_Tick(object sender, EventArgs e)
         {
-            Hora.Text = DateTime.Now.ToLongTimeString();
-            Fecha.Text = DateTime.Now.ToLongDateString();
+            Hora.Text = DateTime.Now.ToShortTimeString();
+            Fecha.Text = DateTime.Now.ToShortDateString();
         }
     }
 
