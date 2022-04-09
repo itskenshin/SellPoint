@@ -72,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms_screens\Login_screen.resx">
+      <DependentUpon>Login_screen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Splash_Screen.resx">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
     </EmbeddedResource>
