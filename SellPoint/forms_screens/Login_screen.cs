@@ -28,6 +28,7 @@ namespace SellPoint.forms_screens
         { Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Thread.Sleep(4000);
+            
             InitializeComponent();
             t.Abort();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -41,6 +42,19 @@ namespace SellPoint.forms_screens
 
         }
 
+        private void username_box_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void username_box_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pass_field_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
