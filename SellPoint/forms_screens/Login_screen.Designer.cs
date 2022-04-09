@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 599);
+            this.ClientSize = new System.Drawing.Size(1081, 623);
             this.ControlBox = false;
             this.Name = "Login_screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
