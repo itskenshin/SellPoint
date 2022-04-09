@@ -38,8 +38,6 @@
             this.ControlBox = false;
             this.Name = "Login_screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login_screen";
-            this.Load += new System.EventHandler(this.Login_screen_Load);
             this.ResumeLayout(false);
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace SellPoint.forms_screens
 {
@@ -24,15 +25,22 @@ namespace SellPoint.forms_screens
             int nHeightEllipse // width of ellipse
         );
         public Login_screen()
-        {
+        { Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(4000);
             InitializeComponent();
+            t.Abort();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void Login_screen_Load(object sender, EventArgs e)
+
+        public void StartForm()
         {
+            Application.Run(new Splash());
 
         }
+
+
     }
 }
