@@ -17,9 +17,6 @@ namespace SellPoint
             InitializeComponent();
         }
 
-        private void Splash_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

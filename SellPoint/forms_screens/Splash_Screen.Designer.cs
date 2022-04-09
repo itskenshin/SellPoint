@@ -53,7 +53,7 @@
             this.Name = "Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.Load += new System.EventHandler(this.Splash_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.Splashbox)).EndInit();
             this.ResumeLayout(false);
 
