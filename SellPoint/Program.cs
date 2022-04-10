@@ -17,7 +17,7 @@ namespace SellPoint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Grupos_Entidades());
+            Application.Run(new Entidades());
         }
     }
 }
