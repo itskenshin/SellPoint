@@ -16,7 +16,7 @@ namespace SellPoint.forms_screens
         {   
             InitializeComponent();
         }
-
+        // boton para ir atras
         private void btnsalir_Click(object sender, EventArgs e)
         {
             
@@ -25,7 +25,7 @@ namespace SellPoint.forms_screens
             this.Visible = false;
             
         }
-
+        // boton de registrarse
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (btnusername.Texts == "")
@@ -38,7 +38,7 @@ namespace SellPoint.forms_screens
                 label_pass_vali.Visible = true;
             }
         }
-
+        // onloadscreen metodo
         private void Registro_screen_Load(object sender, EventArgs e)
         {
             SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.VER_POSTIVE);

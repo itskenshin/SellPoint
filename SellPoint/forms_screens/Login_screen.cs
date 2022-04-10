@@ -33,7 +33,7 @@ namespace SellPoint.forms_screens
         {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(4000);
+            Thread.Sleep(1500);
 
             InitializeComponent();
             t.Abort();
@@ -63,7 +63,7 @@ namespace SellPoint.forms_screens
         }
 
 
-
+        //boton click login 
         private void btnlogin_Click(object sender, EventArgs e)
         {
             if (username_box.Texts == "")
@@ -96,12 +96,12 @@ namespace SellPoint.forms_screens
             }
 
         }
-
+        //boton para salir del programa
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        // boton para ir a la pantalla de registro
         private void regibtn_Click(object sender, EventArgs e)
         {
 
