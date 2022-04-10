@@ -88,7 +88,7 @@
             // 
             // btnusername
             // 
-            this.btnusername.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnusername.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnusername.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btnusername.BorderFocusColor = System.Drawing.Color.Red;
             this.btnusername.BorderSize = 2;
@@ -100,14 +100,14 @@
             this.btnusername.Name = "btnusername";
             this.btnusername.Padding = new System.Windows.Forms.Padding(7);
             this.btnusername.PasswordChar = false;
-            this.btnusername.Size = new System.Drawing.Size(277, 31);
+            this.btnusername.Size = new System.Drawing.Size(283, 31);
             this.btnusername.TabIndex = 3;
             this.btnusername.Texts = "";
             this.btnusername.UnderlineStyle = true;
             // 
             // btnpassword
             // 
-            this.btnpassword.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnpassword.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnpassword.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btnpassword.BorderFocusColor = System.Drawing.Color.Red;
             this.btnpassword.BorderSize = 2;
@@ -119,7 +119,7 @@
             this.btnpassword.Name = "btnpassword";
             this.btnpassword.Padding = new System.Windows.Forms.Padding(7);
             this.btnpassword.PasswordChar = true;
-            this.btnpassword.Size = new System.Drawing.Size(277, 31);
+            this.btnpassword.Size = new System.Drawing.Size(283, 31);
             this.btnpassword.TabIndex = 4;
             this.btnpassword.Texts = "";
             this.btnpassword.UnderlineStyle = true;

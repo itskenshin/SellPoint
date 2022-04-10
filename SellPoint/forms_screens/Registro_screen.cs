@@ -13,7 +13,7 @@ namespace SellPoint.forms_screens
     public partial class Registro_screen : Form
     {
         public Registro_screen()
-        {
+        {   
             InitializeComponent();
         }
 
