@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="animation\winapi.cs" />
     <Compile Include="forms_screens\Acerca_de_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="forms_screens\Main_Screen.Designer.cs">
       <DependentUpon>Main_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms_screens\Registro_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_screens\Registro_screen.Designer.cs">
+      <DependentUpon>Registro_screen.cs</DependentUpon>
     </Compile>
     <Compile Include="forms_screens\Splash_Screen.cs">
       <SubType>Form</SubType>
@@ -89,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Main_Screen.resx">
       <DependentUpon>Main_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_screens\Registro_screen.resx">
+      <DependentUpon>Registro_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Splash_Screen.resx">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
