@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="animation\winapi.cs" />
     <Compile Include="forms_screens\Acerca_de_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
