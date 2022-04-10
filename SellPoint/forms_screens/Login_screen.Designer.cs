@@ -105,6 +105,7 @@
             this.regibtn.Text = "Registrate";
             this.regibtn.TextColor = System.Drawing.Color.White;
             this.regibtn.UseVisualStyleBackColor = false;
+            this.regibtn.Click += new System.EventHandler(this.regibtn_Click);
             // 
             // btnSalir
             // 

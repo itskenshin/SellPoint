@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Transacciones.Interfases;
 
 namespace SellPoint.forms_screens
 {
     public partial class Login_screen : Form
     {
+        public ITransacciones transacciones;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -25,10 +27,11 @@ namespace SellPoint.forms_screens
             int nHeightEllipse // width of ellipse
         );
         public Login_screen()
-        { Thread t = new Thread(new ThreadStart(StartForm));
+        {
+            Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Thread.Sleep(4000);
-            
+
             InitializeComponent();
             t.Abort();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -50,10 +53,10 @@ namespace SellPoint.forms_screens
             label_pass_vali.BackColor = Color.Transparent;
             uservalidlabel.Parent = pictureBox1;
             uservalidlabel.BackColor = Color.Transparent;
-            
+
         }
 
-      
+
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
@@ -66,11 +69,26 @@ namespace SellPoint.forms_screens
             {
                 label_pass_vali.Visible = true;
             }
+
+            if (username_box.Texts != String.Empty && pass_field.Texts != String.Empty)
+            {
+                var result = transacciones.Autenticacion(user: username_box.Texts, password: pass_field.Texts);
+                    if (result != null)
+                {
+
+                }
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void regibtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

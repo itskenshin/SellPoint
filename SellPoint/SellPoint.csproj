@@ -227,5 +227,11 @@
   <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Transacciones\Transacciones.csproj">
+      <Project>{cb21bb35-e525-417f-9c17-4b1b8ea3cfbe}</Project>
+      <Name>Transacciones</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
