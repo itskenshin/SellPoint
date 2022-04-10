@@ -55,12 +55,12 @@ namespace SellPoint.forms_screens
             lblerror.BackColor = Color.Transparent;
             
         }
-
+        // boton delete para la tabla de base datos
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
         }
-        // Boton insertar en la tabla
+        // Boton insertar en la tabla base de datos
         private void btnInsert_Click(object sender, EventArgs e)
         {
             if (usernameField.Texts == String.Empty || passField.Texts == String.Empty ||
@@ -92,35 +92,39 @@ namespace SellPoint.forms_screens
                 }
             }
         }
-
+        // va al mainscreen
         private void button1_Click(object sender, EventArgs e)
-        {
-
+        {   this.Close();
+            Main_Screen main_Screen = new Main_Screen();
+            main_Screen.Show();
         }
 
         private void btnGrupoEntidades_Click(object sender, EventArgs e)
         {
-
+            // ir al form grupo entidades
         }
 
         private void btnTipoEntidades_Click(object sender, EventArgs e)
         {
-
+            // ir al form tipoentidades
         }
 
         private void btnAcerca_Click(object sender, EventArgs e)
         {
-
+            // ir al form acerca de
         }
 
+        // boton que lleva al login
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Login_screen login_Screen = new Login_screen();
+            login_Screen.Show();
         }
-
+        // boton para salir del programa
         private void BtnSalirr_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
 
@@ -146,17 +150,17 @@ namespace SellPoint.forms_screens
                 }
             }
         }
-
+        // boton para abrir el dropdown de archivos
         private void btnArchivos_Click_1(object sender, EventArgs e)
         {
             timer1.Start();
         }
-
+        // boton para abrir el dropdown de sistema
         private void btnSistema_Click_1(object sender, EventArgs e)
         {
             timer2.Start();
         }
-
+        // boton para ir para atras 
         private void btnback_Click(object sender, EventArgs e)
         {
 
