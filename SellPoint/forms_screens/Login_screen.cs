@@ -72,5 +72,12 @@ namespace SellPoint.forms_screens
         {
             this.Close();
         }
+
+        private void regibtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Registro_screen r = new Registro_screen();
+            r.Show();
+        }
     }
 }
