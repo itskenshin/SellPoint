@@ -46,7 +46,7 @@
             this.numeroDocField = new SellPoint.widgets.textBox();
             this.localidadField = new SellPoint.widgets.textBox();
             this.direccionField = new SellPoint.widgets.textBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.lblerror = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnSalirr = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.btnArchivos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +169,7 @@
             this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnback.TabIndex = 6;
             this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // labelUsername
             // 
@@ -314,13 +315,13 @@
             this.direccionField.Texts = "";
             this.direccionField.UnderlineStyle = false;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(243, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(634, 385);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(243, 77);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(634, 385);
+            this.dataGridView.TabIndex = 15;
             // 
             // lblerror
             // 
@@ -486,7 +487,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblerror);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.direccionField);
             this.Controls.Add(this.localidadField);
             this.Controls.Add(this.numeroDocField);
@@ -509,7 +510,7 @@
             this.Load += new System.EventHandler(this.Main_Screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -534,7 +535,7 @@
         private widgets.textBox numeroDocField;
         private widgets.textBox localidadField;
         private widgets.textBox direccionField;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label lblerror;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAcerca;

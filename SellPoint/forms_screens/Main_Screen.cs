@@ -150,6 +150,11 @@ namespace SellPoint.forms_screens
         {
             timer2.Start();
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
        
