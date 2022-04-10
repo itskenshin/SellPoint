@@ -135,6 +135,7 @@
             this.label_validator_username.TabIndex = 7;
             this.label_validator_username.Text = "Introduce tu usuario!";
             this.label_validator_username.Visible = false;
+            
             // 
             // label_pass_vali
             // 

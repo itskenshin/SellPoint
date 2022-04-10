@@ -34,6 +34,22 @@ namespace SellPoint.forms_screens
             Hora.Text = DateTime.Now.ToShortTimeString();
             Fecha.Text = DateTime.Now.ToShortDateString();
         }
+
+        private void Main_Screen_Load(object sender, EventArgs e)
+        {
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
+            Hora.Parent = pictureBox1;
+            Hora.BackColor = Color.Transparent;
+            Fecha.Parent = pictureBox1;
+            Fecha.BackColor = Color.Transparent;
+            labelUsername.Parent = pictureBox1;
+            labelUsername.BackColor = Color.Transparent;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
        
