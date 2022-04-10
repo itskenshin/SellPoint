@@ -52,6 +52,12 @@
     <Compile Include="forms_screens\Acerca_de_Screen.Designer.cs">
       <DependentUpon>Acerca_de_Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_screens\Grupos_Entidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_screens\Grupos_Entidades.Designer.cs">
+      <DependentUpon>Grupos_Entidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms_screens\Login_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="forms_screens\Splash_Screen.Designer.cs">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_screens\Tipos_Entidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_screens\Tipos_Entidades.Designer.cs">
+      <DependentUpon>Tipos_Entidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="widgets\RJControls.cs">
@@ -84,6 +96,9 @@
     <EmbeddedResource Include="forms_screens\Acerca_de_Screen.resx">
       <DependentUpon>Acerca_de_Screen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms_screens\Grupos_Entidades.resx">
+      <DependentUpon>Grupos_Entidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Login_screen.resx">
       <DependentUpon>Login_screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Splash_Screen.resx">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_screens\Tipos_Entidades.resx">
+      <DependentUpon>Tipos_Entidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
