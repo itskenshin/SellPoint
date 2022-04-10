@@ -29,7 +29,7 @@ namespace SellPoint.forms_screens
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
+        // fecha y hora actual
         private void HoraFecha_Tick(object sender, EventArgs e)
         {
             Hora.Text = DateTime.Now.ToShortTimeString();
@@ -54,7 +54,7 @@ namespace SellPoint.forms_screens
         {
 
         }
-
+        // Boton insertar en la tabla
         private void btnInsert_Click(object sender, EventArgs e)
         {
             if (usernameField.Texts == String.Empty || passField.Texts == String.Empty ||
@@ -64,7 +64,7 @@ namespace SellPoint.forms_screens
                 lblerror.Visible = true;
             }
         }
-
+        // esto es para hacer el dropdown de los botones sistema y archivos
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (isCollapse)
@@ -117,8 +117,8 @@ namespace SellPoint.forms_screens
 
         }
 
-      
 
+        // esto es para hacer el dropdown de los botones sistema y archivos
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (isCollapse)
