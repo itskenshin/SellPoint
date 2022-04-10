@@ -12,6 +12,7 @@ namespace SellPoint.forms_screens
 {
     public partial class Main_Screen : Form
     {
+        private bool isCollapse;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (   // para poner las esquinas redondas
@@ -44,11 +45,110 @@ namespace SellPoint.forms_screens
             Fecha.BackColor = Color.Transparent;
             labelUsername.Parent = pictureBox1;
             labelUsername.BackColor = Color.Transparent;
+            lblerror.Parent = pictureBox1;
+            lblerror.BackColor = Color.Transparent;
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            if (usernameField.Texts == String.Empty || passField.Texts == String.Empty ||
+                phoneField.Texts == String.Empty || direccionField.Texts == String.Empty ||
+                numeroDocField.Texts == String.Empty || localidadField.Texts == String.Empty || descripcionField.Texts == String.Empty)
+            {
+                lblerror.Visible = true;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (isCollapse)
+            {
+                panel1.Height += 100;
+                if(panel1.Size == panel1.MaximumSize)
+                {
+                    timer1.Stop();
+                    isCollapse = false;
+                }
+            }
+            else
+            {
+                panel1.Height -= 100;
+                if (panel1.Size == panel1.MinimumSize)
+                {
+                    timer1.Stop();
+                    isCollapse = true;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGrupoEntidades_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTipoEntidades_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAcerca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSalirr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (isCollapse)
+            {
+                panel2.Height += 100;
+                if (panel2.Size == panel2.MaximumSize)
+                {
+                    timer2.Stop();
+                    isCollapse = false;
+                }
+            }
+            else
+            {
+                panel2.Height -= 100;
+                if (panel2.Size == panel2.MinimumSize)
+                {
+                    timer2.Stop();
+                    isCollapse = true;
+                }
+            }
+        }
+
+        private void btnArchivos_Click_1(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void btnSistema_Click_1(object sender, EventArgs e)
+        {
+            timer2.Start();
         }
     }
 

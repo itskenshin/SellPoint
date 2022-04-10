@@ -39,17 +39,32 @@
             this.btnDelete = new SellPoint.widgets.RJControls();
             this.btnback = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.textBox1 = new SellPoint.widgets.textBox();
-            this.textBox2 = new SellPoint.widgets.textBox();
-            this.textBox3 = new SellPoint.widgets.textBox();
-            this.textBox4 = new SellPoint.widgets.textBox();
-            this.textBox5 = new SellPoint.widgets.textBox();
-            this.textBox6 = new SellPoint.widgets.textBox();
-            this.textBox7 = new SellPoint.widgets.textBox();
+            this.usernameField = new SellPoint.widgets.textBox();
+            this.passField = new SellPoint.widgets.textBox();
+            this.phoneField = new SellPoint.widgets.textBox();
+            this.descripcionField = new SellPoint.widgets.textBox();
+            this.numeroDocField = new SellPoint.widgets.textBox();
+            this.localidadField = new SellPoint.widgets.textBox();
+            this.direccionField = new SellPoint.widgets.textBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblerror = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnSalirr = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnAcerca = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEntidades = new System.Windows.Forms.Button();
+            this.btnTipoEntidades = new System.Windows.Forms.Button();
+            this.btnGrupoEntidades = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btnSistema = new System.Windows.Forms.Button();
+            this.btnArchivos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Hora
@@ -105,6 +120,7 @@
             this.btnInsert.Text = "INSERTAR";
             this.btnInsert.TextColor = System.Drawing.Color.White;
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnActualizar
             // 
@@ -145,7 +161,7 @@
             // 
             // btnback
             // 
-            this.btnback.BackColor = System.Drawing.Color.DimGray;
+            this.btnback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
             this.btnback.Location = new System.Drawing.Point(12, 503);
             this.btnback.Name = "btnback";
@@ -165,138 +181,138 @@
             this.labelUsername.TabIndex = 7;
             this.labelUsername.Text = "aqui va el username";
             // 
-            // textBox1
+            // usernameField
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(12, 145);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(209, 31);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Texts = "";
-            this.textBox1.UnderlineStyle = false;
+            this.usernameField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.usernameField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.usernameField.BorderFocusColor = System.Drawing.Color.Red;
+            this.usernameField.BorderSize = 2;
+            this.usernameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameField.ForeColor = System.Drawing.SystemColors.Control;
+            this.usernameField.Location = new System.Drawing.Point(12, 145);
+            this.usernameField.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameField.Multiline = false;
+            this.usernameField.Name = "usernameField";
+            this.usernameField.Padding = new System.Windows.Forms.Padding(7);
+            this.usernameField.PasswordChar = false;
+            this.usernameField.Size = new System.Drawing.Size(209, 31);
+            this.usernameField.TabIndex = 8;
+            this.usernameField.Texts = "";
+            this.usernameField.UnderlineStyle = false;
             // 
-            // textBox2
+            // passField
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox2.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox2.BorderSize = 2;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(13, 200);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = false;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox2.PasswordChar = false;
-            this.textBox2.Size = new System.Drawing.Size(209, 31);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Texts = "";
-            this.textBox2.UnderlineStyle = false;
+            this.passField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.passField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.passField.BorderFocusColor = System.Drawing.Color.Red;
+            this.passField.BorderSize = 2;
+            this.passField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passField.ForeColor = System.Drawing.SystemColors.Control;
+            this.passField.Location = new System.Drawing.Point(13, 200);
+            this.passField.Margin = new System.Windows.Forms.Padding(4);
+            this.passField.Multiline = false;
+            this.passField.Name = "passField";
+            this.passField.Padding = new System.Windows.Forms.Padding(7);
+            this.passField.PasswordChar = true;
+            this.passField.Size = new System.Drawing.Size(209, 31);
+            this.passField.TabIndex = 9;
+            this.passField.Texts = "";
+            this.passField.UnderlineStyle = false;
             // 
-            // textBox3
+            // phoneField
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox3.BorderSize = 2;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox3.Location = new System.Drawing.Point(12, 252);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Multiline = false;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox3.PasswordChar = false;
-            this.textBox3.Size = new System.Drawing.Size(209, 31);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.Texts = "";
-            this.textBox3.UnderlineStyle = false;
+            this.phoneField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.phoneField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.phoneField.BorderFocusColor = System.Drawing.Color.Red;
+            this.phoneField.BorderSize = 2;
+            this.phoneField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneField.ForeColor = System.Drawing.SystemColors.Control;
+            this.phoneField.Location = new System.Drawing.Point(12, 252);
+            this.phoneField.Margin = new System.Windows.Forms.Padding(4);
+            this.phoneField.Multiline = false;
+            this.phoneField.Name = "phoneField";
+            this.phoneField.Padding = new System.Windows.Forms.Padding(7);
+            this.phoneField.PasswordChar = false;
+            this.phoneField.Size = new System.Drawing.Size(209, 31);
+            this.phoneField.TabIndex = 10;
+            this.phoneField.Texts = "";
+            this.phoneField.UnderlineStyle = false;
             // 
-            // textBox4
+            // descripcionField
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox4.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox4.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox4.BorderSize = 2;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox4.Location = new System.Drawing.Point(12, 305);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Multiline = false;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox4.PasswordChar = false;
-            this.textBox4.Size = new System.Drawing.Size(209, 31);
-            this.textBox4.TabIndex = 11;
-            this.textBox4.Texts = "";
-            this.textBox4.UnderlineStyle = false;
+            this.descripcionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.descripcionField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.descripcionField.BorderFocusColor = System.Drawing.Color.Red;
+            this.descripcionField.BorderSize = 2;
+            this.descripcionField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcionField.ForeColor = System.Drawing.SystemColors.Control;
+            this.descripcionField.Location = new System.Drawing.Point(12, 305);
+            this.descripcionField.Margin = new System.Windows.Forms.Padding(4);
+            this.descripcionField.Multiline = false;
+            this.descripcionField.Name = "descripcionField";
+            this.descripcionField.Padding = new System.Windows.Forms.Padding(7);
+            this.descripcionField.PasswordChar = false;
+            this.descripcionField.Size = new System.Drawing.Size(209, 31);
+            this.descripcionField.TabIndex = 11;
+            this.descripcionField.Texts = "";
+            this.descripcionField.UnderlineStyle = false;
             // 
-            // textBox5
+            // numeroDocField
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox5.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox5.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox5.BorderSize = 2;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox5.Location = new System.Drawing.Point(12, 357);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Multiline = false;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox5.PasswordChar = false;
-            this.textBox5.Size = new System.Drawing.Size(209, 31);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.Texts = "";
-            this.textBox5.UnderlineStyle = false;
+            this.numeroDocField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.numeroDocField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.numeroDocField.BorderFocusColor = System.Drawing.Color.Red;
+            this.numeroDocField.BorderSize = 2;
+            this.numeroDocField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeroDocField.ForeColor = System.Drawing.SystemColors.Control;
+            this.numeroDocField.Location = new System.Drawing.Point(12, 357);
+            this.numeroDocField.Margin = new System.Windows.Forms.Padding(4);
+            this.numeroDocField.Multiline = false;
+            this.numeroDocField.Name = "numeroDocField";
+            this.numeroDocField.Padding = new System.Windows.Forms.Padding(7);
+            this.numeroDocField.PasswordChar = false;
+            this.numeroDocField.Size = new System.Drawing.Size(209, 31);
+            this.numeroDocField.TabIndex = 12;
+            this.numeroDocField.Texts = "";
+            this.numeroDocField.UnderlineStyle = false;
             // 
-            // textBox6
+            // localidadField
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox6.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox6.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox6.BorderSize = 2;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox6.Location = new System.Drawing.Point(12, 406);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Multiline = false;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox6.PasswordChar = false;
-            this.textBox6.Size = new System.Drawing.Size(209, 31);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.Texts = "";
-            this.textBox6.UnderlineStyle = false;
+            this.localidadField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.localidadField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.localidadField.BorderFocusColor = System.Drawing.Color.Red;
+            this.localidadField.BorderSize = 2;
+            this.localidadField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.localidadField.ForeColor = System.Drawing.SystemColors.Control;
+            this.localidadField.Location = new System.Drawing.Point(12, 406);
+            this.localidadField.Margin = new System.Windows.Forms.Padding(4);
+            this.localidadField.Multiline = false;
+            this.localidadField.Name = "localidadField";
+            this.localidadField.Padding = new System.Windows.Forms.Padding(7);
+            this.localidadField.PasswordChar = false;
+            this.localidadField.Size = new System.Drawing.Size(209, 31);
+            this.localidadField.TabIndex = 13;
+            this.localidadField.Texts = "";
+            this.localidadField.UnderlineStyle = false;
             // 
-            // textBox7
+            // direccionField
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox7.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox7.BorderFocusColor = System.Drawing.Color.Red;
-            this.textBox7.BorderSize = 2;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox7.Location = new System.Drawing.Point(12, 459);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Multiline = false;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox7.PasswordChar = false;
-            this.textBox7.Size = new System.Drawing.Size(209, 31);
-            this.textBox7.TabIndex = 14;
-            this.textBox7.Texts = "";
-            this.textBox7.UnderlineStyle = false;
+            this.direccionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.direccionField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.direccionField.BorderFocusColor = System.Drawing.Color.Red;
+            this.direccionField.BorderSize = 2;
+            this.direccionField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.direccionField.ForeColor = System.Drawing.SystemColors.Control;
+            this.direccionField.Location = new System.Drawing.Point(12, 459);
+            this.direccionField.Margin = new System.Windows.Forms.Padding(4);
+            this.direccionField.Multiline = false;
+            this.direccionField.Name = "direccionField";
+            this.direccionField.Padding = new System.Windows.Forms.Padding(7);
+            this.direccionField.PasswordChar = false;
+            this.direccionField.Size = new System.Drawing.Size(209, 31);
+            this.direccionField.TabIndex = 14;
+            this.direccionField.Texts = "";
+            this.direccionField.UnderlineStyle = false;
             // 
             // dataGridView1
             // 
@@ -306,20 +322,178 @@
             this.dataGridView1.Size = new System.Drawing.Size(634, 385);
             this.dataGridView1.TabIndex = 15;
             // 
+            // lblerror
+            // 
+            this.lblerror.AutoSize = true;
+            this.lblerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.ForeColor = System.Drawing.Color.Red;
+            this.lblerror.Location = new System.Drawing.Point(240, 53);
+            this.lblerror.Name = "lblerror";
+            this.lblerror.Size = new System.Drawing.Size(184, 17);
+            this.lblerror.TabIndex = 16;
+            this.lblerror.Text = "Completa todos los campos!";
+            this.lblerror.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnSistema);
+            this.panel2.Controls.Add(this.btnAcerca);
+            this.panel2.Controls.Add(this.BtnSalirr);
+            this.panel2.Controls.Add(this.btnLogin);
+            this.panel2.Location = new System.Drawing.Point(551, 0);
+            this.panel2.MaximumSize = new System.Drawing.Size(115, 126);
+            this.panel2.MinimumSize = new System.Drawing.Size(115, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(115, 27);
+            this.panel2.TabIndex = 19;
+            // 
+            // BtnSalirr
+            // 
+            this.BtnSalirr.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSalirr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalirr.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnSalirr.Location = new System.Drawing.Point(0, 96);
+            this.BtnSalirr.Name = "BtnSalirr";
+            this.BtnSalirr.Size = new System.Drawing.Size(115, 28);
+            this.BtnSalirr.TabIndex = 3;
+            this.BtnSalirr.Text = "Salir";
+            this.BtnSalirr.UseVisualStyleBackColor = false;
+            this.BtnSalirr.Click += new System.EventHandler(this.BtnSalirr_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLogin.Location = new System.Drawing.Point(0, 65);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(115, 25);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnAcerca
+            // 
+            this.btnAcerca.BackColor = System.Drawing.Color.Transparent;
+            this.btnAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcerca.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAcerca.Location = new System.Drawing.Point(0, 32);
+            this.btnAcerca.Name = "btnAcerca";
+            this.btnAcerca.Size = new System.Drawing.Size(115, 27);
+            this.btnAcerca.TabIndex = 1;
+            this.btnAcerca.Text = "Acerca de Nosotros";
+            this.btnAcerca.UseVisualStyleBackColor = false;
+            this.btnAcerca.Click += new System.EventHandler(this.btnAcerca_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnArchivos);
+            this.panel1.Controls.Add(this.btnEntidades);
+            this.panel1.Controls.Add(this.btnTipoEntidades);
+            this.panel1.Controls.Add(this.btnGrupoEntidades);
+            this.panel1.Location = new System.Drawing.Point(439, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(115, 126);
+            this.panel1.MinimumSize = new System.Drawing.Size(115, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(115, 27);
+            this.panel1.TabIndex = 20;
+            // 
+            // btnEntidades
+            // 
+            this.btnEntidades.BackColor = System.Drawing.Color.Transparent;
+            this.btnEntidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntidades.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEntidades.Location = new System.Drawing.Point(0, 32);
+            this.btnEntidades.Name = "btnEntidades";
+            this.btnEntidades.Size = new System.Drawing.Size(115, 27);
+            this.btnEntidades.TabIndex = 1;
+            this.btnEntidades.Text = "Entidades";
+            this.btnEntidades.UseVisualStyleBackColor = false;
+            this.btnEntidades.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnTipoEntidades
+            // 
+            this.btnTipoEntidades.BackColor = System.Drawing.Color.Transparent;
+            this.btnTipoEntidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoEntidades.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTipoEntidades.Location = new System.Drawing.Point(0, 96);
+            this.btnTipoEntidades.Name = "btnTipoEntidades";
+            this.btnTipoEntidades.Size = new System.Drawing.Size(115, 28);
+            this.btnTipoEntidades.TabIndex = 3;
+            this.btnTipoEntidades.Text = "Tipo Entidades";
+            this.btnTipoEntidades.UseVisualStyleBackColor = false;
+            this.btnTipoEntidades.Click += new System.EventHandler(this.btnTipoEntidades_Click);
+            // 
+            // btnGrupoEntidades
+            // 
+            this.btnGrupoEntidades.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrupoEntidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrupoEntidades.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGrupoEntidades.Location = new System.Drawing.Point(0, 65);
+            this.btnGrupoEntidades.Name = "btnGrupoEntidades";
+            this.btnGrupoEntidades.Size = new System.Drawing.Size(115, 25);
+            this.btnGrupoEntidades.TabIndex = 2;
+            this.btnGrupoEntidades.Text = "Grupo Entidades";
+            this.btnGrupoEntidades.UseVisualStyleBackColor = false;
+            this.btnGrupoEntidades.Click += new System.EventHandler(this.btnGrupoEntidades_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // btnSistema
+            // 
+            this.btnSistema.BackColor = System.Drawing.Color.Transparent;
+            this.btnSistema.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSistema.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSistema.Location = new System.Drawing.Point(0, 0);
+            this.btnSistema.Name = "btnSistema";
+            this.btnSistema.Size = new System.Drawing.Size(115, 27);
+            this.btnSistema.TabIndex = 5;
+            this.btnSistema.Text = "SISTEMA";
+            this.btnSistema.UseVisualStyleBackColor = false;
+            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click_1);
+            // 
+            // btnArchivos
+            // 
+            this.btnArchivos.BackColor = System.Drawing.Color.Transparent;
+            this.btnArchivos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArchivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArchivos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnArchivos.Location = new System.Drawing.Point(0, 0);
+            this.btnArchivos.Name = "btnArchivos";
+            this.btnArchivos.Size = new System.Drawing.Size(115, 27);
+            this.btnArchivos.TabIndex = 4;
+            this.btnArchivos.Text = "ARCHIVOS";
+            this.btnArchivos.UseVisualStyleBackColor = false;
+            this.btnArchivos.Click += new System.EventHandler(this.btnArchivos_Click_1);
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 536);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lblerror);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.direccionField);
+            this.Controls.Add(this.localidadField);
+            this.Controls.Add(this.numeroDocField);
+            this.Controls.Add(this.descripcionField);
+            this.Controls.Add(this.phoneField);
+            this.Controls.Add(this.passField);
+            this.Controls.Add(this.usernameField);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnDelete);
@@ -336,6 +510,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,13 +527,26 @@
         private widgets.RJControls btnDelete;
         private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Label labelUsername;
-        private widgets.textBox textBox1;
-        private widgets.textBox textBox2;
-        private widgets.textBox textBox3;
-        private widgets.textBox textBox4;
-        private widgets.textBox textBox5;
-        private widgets.textBox textBox6;
-        private widgets.textBox textBox7;
+        private widgets.textBox usernameField;
+        private widgets.textBox passField;
+        private widgets.textBox phoneField;
+        private widgets.textBox descripcionField;
+        private widgets.textBox numeroDocField;
+        private widgets.textBox localidadField;
+        private widgets.textBox direccionField;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblerror;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnAcerca;
+        private System.Windows.Forms.Button BtnSalirr;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEntidades;
+        private System.Windows.Forms.Button btnTipoEntidades;
+        private System.Windows.Forms.Button btnGrupoEntidades;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btnSistema;
+        private System.Windows.Forms.Button btnArchivos;
     }
 }
