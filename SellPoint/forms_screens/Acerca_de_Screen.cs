@@ -31,7 +31,10 @@ namespace SellPoint.forms_screens
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-      
+        private void rjControls1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     }
 
