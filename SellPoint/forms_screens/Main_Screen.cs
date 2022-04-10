@@ -12,7 +12,11 @@ namespace SellPoint.forms_screens
 {
     public partial class Main_Screen : Form
     {
+
         private bool isCollapse;
+
+      
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (   // para poner las esquinas redondas
@@ -24,10 +28,11 @@ namespace SellPoint.forms_screens
             int nHeightEllipse // width of ellipse
         );
         public Main_Screen()
-        {   
+        {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            
         }
         // fecha y hora actual
         private void HoraFecha_Tick(object sender, EventArgs e)
@@ -35,6 +40,7 @@ namespace SellPoint.forms_screens
             Hora.Text = DateTime.Now.ToShortTimeString();
             Fecha.Text = DateTime.Now.ToShortDateString();
         }
+
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
@@ -157,6 +163,10 @@ namespace SellPoint.forms_screens
         }
     }
 
+
        
     }
+
+
+}
 
