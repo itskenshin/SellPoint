@@ -12,6 +12,7 @@ namespace Datos
     {
         public  SqlConnection _connection;
         public SqlCommand _command;
+        
         private string Command;
 
         public Datos()
@@ -20,11 +21,12 @@ namespace Datos
             _command = new SqlCommand(Command,this._connection);
             
             
+            
         }
 
         public  void OpenConnection()
         {
-          var connectionString =  _connection.ConnectionString = ConfigurationManager.ConnectionStrings["dbSellPoint"].ConnectionString;
+          var connectionString =  _connection.ConnectionString = ConfigurationManager.ConnectionStrings[2].ConnectionString;
             if (connectionString!= String.Empty)
             {
                 try

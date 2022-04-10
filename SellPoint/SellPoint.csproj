@@ -228,6 +228,10 @@
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{A8BD103E-07C5-42F9-866A-A26DABD0C835}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Transacciones\Transacciones.csproj">
       <Project>{cb21bb35-e525-417f-9c17-4b1b8ea3cfbe}</Project>
       <Name>Transacciones</Name>
