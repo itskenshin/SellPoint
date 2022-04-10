@@ -50,8 +50,8 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRegister.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRegister.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnRegister.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnRegister.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnRegister.BorderRadius = 20;
             this.btnRegister.BorderSize = 0;
@@ -69,8 +69,8 @@
             // 
             // btnsalir
             // 
-            this.btnsalir.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnsalir.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.btnsalir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnsalir.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnsalir.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnsalir.BorderRadius = 20;
             this.btnsalir.BorderSize = 0;
