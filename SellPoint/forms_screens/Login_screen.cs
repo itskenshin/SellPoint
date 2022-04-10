@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Transacciones;
 
 namespace SellPoint.forms_screens
 {
     public partial class Login_screen : Form
     {
+
+        
+        public Transacciones.Transacciones _transacciones = new Transacciones.Transacciones();
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -24,15 +29,18 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public Login_screen()
-        { Thread t = new Thread(new ThreadStart(StartForm));
+        public Login_screen() 
+        {
+            Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Thread.Sleep(4000);
-            
+
             InitializeComponent();
             t.Abort();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Login_screen login = this;
+
         }
 
 
@@ -50,10 +58,10 @@ namespace SellPoint.forms_screens
             label_pass_vali.BackColor = Color.Transparent;
             uservalidlabel.Parent = pictureBox1;
             uservalidlabel.BackColor = Color.Transparent;
-            
+
         }
 
-      
+
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
@@ -66,11 +74,38 @@ namespace SellPoint.forms_screens
             {
                 label_pass_vali.Visible = true;
             }
+
+            if (username_box.Texts != String.Empty && pass_field.Texts != String.Empty)
+            {
+                var result = _transacciones.Autenticacion(user: username_box.Texts, password: pass_field.Texts);
+                if (result != null)
+                {
+                    if (result.UserNameEntidad == username_box.Texts && result.PassworEntidad == pass_field.Texts)
+                    {
+                        this.Hide();
+                        Main_Screen main = new Main_Screen();
+                        main.Show();
+
+                    }
+                    else
+                    {
+                        uservalidlabel.Visible = true;
+                    }
+                }
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void regibtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }
