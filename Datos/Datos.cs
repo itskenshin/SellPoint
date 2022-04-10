@@ -13,7 +13,7 @@ namespace Datos
         public  SqlConnection _connection;
         public SqlCommand _command;
         
-        private string Command;
+        private string Command { get; set; }
 
         public Datos()
         {
