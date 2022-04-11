@@ -12,6 +12,12 @@ namespace Transacciones.Interfases
     {
         
         Entidades Autenticacion(string user, string password);
+        bool AgregarEntidad(Entidades entidades);
+        Entidades VerEntidad(string user);
+        bool EliminarEntidades(string user);
+        List<Entidades> ListaEntidades();
+        Entidades ActualizarEntidad(string user);
+
 
     }
 }

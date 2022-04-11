@@ -8,15 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Transacciones;
+using Datos.Modelos;
 namespace SellPoint.forms_screens
 {
     public partial class Main_Screen : Form
     {
-
+        Transacciones.Transacciones Transacciones = new Transacciones.Transacciones();
         private bool isCollapse;
-
-      
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (   // para poner las esquinas redondas
@@ -44,7 +43,11 @@ namespace SellPoint.forms_screens
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
+            // TODO: This line of code loads data into the 'sellPointDataSet1.Entidades' table. You can move, or remove it, as needed.
+            this.entidadesTableAdapter.Fill(this.sellPointDataSet1.Entidades);
+            // TODO: This line of code loads data into the 'sellPointDataSet.Entidades' table. You can move, or remove it, as needed.
+            this.entidadesTableAdapter.Fill(this.sellPointDataSet.Entidades);
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
             Hora.Parent = pictureBox1;
             Hora.BackColor = Color.Transparent;
             Fecha.Parent = pictureBox1;
@@ -58,7 +61,7 @@ namespace SellPoint.forms_screens
         // boton delete para la tabla de base datos
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            var selected = this.dataGridView.SelectedCells[0];
         }
         // Boton insertar en la tabla base de datos
         private void btnInsert_Click(object sender, EventArgs e)
@@ -69,6 +72,26 @@ namespace SellPoint.forms_screens
             {
                 lblerror.Visible = true;
             }
+            if (usernameField.Texts != String.Empty || passField.Texts != String.Empty ||
+              phoneField.Texts != String.Empty || direccionField.Texts != String.Empty ||
+              numeroDocField.Texts != String.Empty || localidadField.Texts != String.Empty || descripcionField.Texts != String.Empty)
+            {
+                Datos.Modelos.Entidades entidades = new Entidades();
+                entidades.UserNameEntidad = usernameField.Texts;
+                entidades.PasswordEntidad = passField.Texts;
+                entidades.Telefonos = phoneField.Texts;
+                entidades.Direccion = direccionField.Texts;
+                entidades.NumeroDocumento = int.Parse(numeroDocField.Texts);
+                entidades.Localidad = localidadField.Texts;
+                entidades.Descripcion = descripcionField.Texts;
+                Transacciones.AgregarEntidad(entidades);
+                ActualizarTabla();
+            }
+
+
+           
+
+
         }
         // esto es para hacer el dropdown de los botones sistema y archivos
         private void timer1_Tick(object sender, EventArgs e)
@@ -170,12 +193,63 @@ namespace SellPoint.forms_screens
         // boton para ir para atras 
         private void btnback_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
-    }
+
+        private void getEntidadesToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.entidadesTableAdapter.GetEntidades(this.sellPointDataSet.Entidades);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void getEntiedadesToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.entidadesTableAdapter.GetEntiedades(this.sellPointDataSet.Entidades);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+
+            
+        }
 
 
-       
+        private void ActualizarTabla()
+        {
+            var dataSource = Transacciones.ListaEntidades();
+                this.dataGridView.DataSource = dataSource;
+        }
+
+        private void numeroDocField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 
 

@@ -8,12 +8,12 @@ using System.Configuration;
 
 namespace Datos
 {
-    public  class Datos
+    public class Datos
     {
         public  SqlConnection _connection;
         public SqlCommand _command;
         
-        private string Command;
+        private string Command { get; set; }
 
         public Datos()
         {

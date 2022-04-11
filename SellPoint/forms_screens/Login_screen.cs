@@ -81,7 +81,7 @@ namespace SellPoint.forms_screens
                 var result = _transacciones.Autenticacion(user: username_box.Texts, password: pass_field.Texts);
                 if (result != null)
                 {
-                    if (result.UserNameEntidad == username_box.Texts && result.PassworEntidad == pass_field.Texts)
+                    if (result.UserNameEntidad == username_box.Texts && result.PasswordEntidad == pass_field.Texts)
                     {
                         this.Hide();
                         Main_Screen main = new Main_Screen();
