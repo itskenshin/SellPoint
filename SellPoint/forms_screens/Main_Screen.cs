@@ -31,7 +31,7 @@ namespace SellPoint.forms_screens
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            
+
         }
         // fecha y hora actual
         private void HoraFecha_Tick(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace SellPoint.forms_screens
             labelUsername.BackColor = Color.Transparent;
             lblerror.Parent = pictureBox1;
             lblerror.BackColor = Color.Transparent;
-            
+
         }
         // boton delete para la tabla de base datos
         private void btnDelete_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace SellPoint.forms_screens
             }
 
 
-           
+
 
 
         }
@@ -99,7 +99,7 @@ namespace SellPoint.forms_screens
             if (isCollapse)
             {
                 panel1.Height += 100;
-                if(panel1.Size == panel1.MaximumSize)
+                if (panel1.Size == panel1.MaximumSize)
                 {
                     timer1.Stop();
                     isCollapse = false;
@@ -117,10 +117,11 @@ namespace SellPoint.forms_screens
         }
         // va al mainscreen
         private void button1_Click(object sender, EventArgs e)
-        {   this.Hide();
+        {
+            this.Hide();
             Main_Screen main_Screen = new Main_Screen();
             main_Screen.Show();
-            
+
         }
 
         private void btnGrupoEntidades_Click(object sender, EventArgs e)
@@ -226,14 +227,14 @@ namespace SellPoint.forms_screens
         {
             ActualizarTabla();
 
-            
+
         }
 
 
         private void ActualizarTabla()
         {
             var dataSource = Transacciones.ListaEntidades();
-                this.dataGridView.DataSource = dataSource;
+            this.dataGridView.DataSource = dataSource;
         }
 
         private void numeroDocField_KeyPress(object sender, KeyPressEventArgs e)
@@ -251,6 +252,7 @@ namespace SellPoint.forms_screens
             }
         }
     }
+}
 
 
 
