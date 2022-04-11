@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Datos.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <Compile Include="Modelos\Entidades.cs" />
     <Compile Include="Modelos\GrupoEntidades.cs" />
     <Compile Include="Modelos\GruposEntidades.cs" />
@@ -47,6 +48,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />

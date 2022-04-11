@@ -90,8 +90,8 @@
             // 
             // regibtn
             // 
-            this.regibtn.BackColor = System.Drawing.Color.DimGray;
-            this.regibtn.BackgroundColor = System.Drawing.Color.DimGray;
+            this.regibtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.regibtn.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.regibtn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.regibtn.BorderRadius = 15;
             this.regibtn.BorderSize = 0;
@@ -128,8 +128,8 @@
             // 
             // btnlogin
             // 
-            this.btnlogin.BackColor = System.Drawing.Color.Gray;
-            this.btnlogin.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnlogin.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnlogin.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnlogin.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnlogin.BorderRadius = 15;
             this.btnlogin.BorderSize = 0;

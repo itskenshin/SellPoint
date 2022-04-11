@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="animation\winapi.cs" />
     <Compile Include="forms_screens\Acerca_de_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +65,12 @@
     <Compile Include="forms_screens\Main_Screen.Designer.cs">
       <DependentUpon>Main_Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_screens\Registro_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_screens\Registro_screen.Designer.cs">
+      <DependentUpon>Registro_screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms_screens\Splash_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +79,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellPointDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SellPointDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SellPointDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SellPointDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="widgets\RJControls.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -89,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Main_Screen.resx">
       <DependentUpon>Main_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_screens\Registro_screen.resx">
+      <DependentUpon>Registro_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Splash_Screen.resx">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
@@ -115,6 +135,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SellPointDataSet.xsc">
+      <DependentUpon>SellPointDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SellPointDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SellPointDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SellPointDataSet.xss">
+      <DependentUpon>SellPointDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SellPointDataSet1.xsc">
+      <DependentUpon>SellPointDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SellPointDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SellPointDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SellPointDataSet1.xss">
+      <DependentUpon>SellPointDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
