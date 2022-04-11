@@ -110,6 +110,8 @@ namespace SellPoint.forms_screens
         private void btnTipoEntidades_Click(object sender, EventArgs e)
         {
             // ir al form tipoentidades
+            tipoEntidadesScreen ts = new tipoEntidadesScreen();
+            ts.Show();
         }
 
         private void btnAcerca_Click(object sender, EventArgs e)
