@@ -146,5 +146,15 @@ namespace SellPoint.widgets
             base.OnLoad(e);
             UpdateControlHeight();
         }
+
+        private void textBox_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

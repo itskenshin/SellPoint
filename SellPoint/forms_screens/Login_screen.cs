@@ -33,7 +33,7 @@ namespace SellPoint.forms_screens
         {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(4000);
+            Thread.Sleep(1500);
 
             InitializeComponent();
             t.Abort();
@@ -52,7 +52,7 @@ namespace SellPoint.forms_screens
 
         private void Login_screen_Load(object sender, EventArgs e)
         {
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
             label_validator_username.Parent = pictureBox1;
             label_validator_username.BackColor = Color.Transparent;
             label_pass_vali.Parent = pictureBox1;
@@ -63,7 +63,7 @@ namespace SellPoint.forms_screens
         }
 
 
-
+        //boton click login 
         private void btnlogin_Click(object sender, EventArgs e)
         {
             if (username_box.Texts == "")
@@ -96,17 +96,24 @@ namespace SellPoint.forms_screens
             }
 
         }
-
+        //boton para salir del programa
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        // boton para ir a la pantalla de registro
         private void regibtn_Click(object sender, EventArgs e)
         {
+
             this.Visible = false;
-            Registro_screen r = new Registro_screen();
+            Main_Screen r = new Main_Screen();
             r.Show();
         }
+
+
+        }
+
+     
+
     }
-}
+

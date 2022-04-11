@@ -33,12 +33,13 @@ namespace SellPoint.forms_screens
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             
         }
-
+        // fecha y hora actual
         private void HoraFecha_Tick(object sender, EventArgs e)
         {
             Hora.Text = DateTime.Now.ToShortTimeString();
             Fecha.Text = DateTime.Now.ToShortDateString();
         }
+
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
@@ -57,12 +58,12 @@ namespace SellPoint.forms_screens
             lblerror.BackColor = Color.Transparent;
             
         }
-
+        // boton delete para la tabla de base datos
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var selected = this.dataGridView.SelectedCells[0];
         }
-
+        // Boton insertar en la tabla base de datos
         private void btnInsert_Click(object sender, EventArgs e)
         {
             if (usernameField.Texts == String.Empty || passField.Texts == String.Empty ||
@@ -92,7 +93,7 @@ namespace SellPoint.forms_screens
 
 
         }
-
+        // esto es para hacer el dropdown de los botones sistema y archivos
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (isCollapse)
@@ -114,39 +115,50 @@ namespace SellPoint.forms_screens
                 }
             }
         }
-
+        // va al mainscreen
         private void button1_Click(object sender, EventArgs e)
-        {
-
+        {   this.Hide();
+            Main_Screen main_Screen = new Main_Screen();
+            main_Screen.Show();
+            
         }
 
         private void btnGrupoEntidades_Click(object sender, EventArgs e)
         {
-
+            // ir al form grupo entidades
+            grupoEntidadesScreen gr = new grupoEntidadesScreen();
+            gr.Show();
         }
 
         private void btnTipoEntidades_Click(object sender, EventArgs e)
         {
-
+            // ir al form tipoentidades
+            tipoEntidadesScreen ts = new tipoEntidadesScreen();
+            ts.Show();
         }
 
         private void btnAcerca_Click(object sender, EventArgs e)
         {
-
+            // ir al form acerca de
+            Acerca_de_Screen ac = new Acerca_de_Screen();
+            ac.Show();
         }
 
+        // boton que lleva al login
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Main_Screen ma = new Main_Screen();
+            ma.Show();
         }
-
+        // boton para salir del programa
         private void BtnSalirr_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-      
 
+        // esto es para hacer el dropdown de los botones sistema y archivos
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (isCollapse)
@@ -168,17 +180,17 @@ namespace SellPoint.forms_screens
                 }
             }
         }
-
+        // boton para abrir el dropdown de archivos
         private void btnArchivos_Click_1(object sender, EventArgs e)
         {
             timer1.Start();
         }
-
+        // boton para abrir el dropdown de sistema
         private void btnSistema_Click_1(object sender, EventArgs e)
         {
             timer2.Start();
         }
-
+        // boton para ir para atras 
         private void btnback_Click(object sender, EventArgs e)
         {
 
@@ -241,5 +253,5 @@ namespace SellPoint.forms_screens
     }
 
 
-}
+
 
