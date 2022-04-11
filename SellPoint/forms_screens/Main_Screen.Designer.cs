@@ -122,13 +122,12 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.SystemColors.Control;
             this.labelUsername.Location = new System.Drawing.Point(64, 53);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(136, 17);
+            this.labelUsername.Size = new System.Drawing.Size(0, 20);
             this.labelUsername.TabIndex = 7;
-            this.labelUsername.Text = "aqui va el username";
             // 
             // dataGridView
             // 
@@ -364,7 +363,7 @@
             this.getEntiedadesToolStripButton});
             this.getEntiedadesToolStrip.Location = new System.Drawing.Point(263, 2);
             this.getEntiedadesToolStrip.Name = "getEntiedadesToolStrip";
-            this.getEntiedadesToolStrip.Size = new System.Drawing.Size(129, 25);
+            this.getEntiedadesToolStrip.Size = new System.Drawing.Size(98, 25);
             this.getEntiedadesToolStrip.TabIndex = 22;
             this.getEntiedadesToolStrip.Text = "getEntiedadesToolStrip";
             // 
