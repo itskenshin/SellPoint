@@ -66,7 +66,7 @@ namespace Datos.Modelos
         [Required]
         [StringLength(30)]
         
-        public string PassworEntidad { get; set; }
+        public string PasswordEntidad { get; set; }
         [StringLength(10)]
        
         public string RolUserEntidad { get; set; }
