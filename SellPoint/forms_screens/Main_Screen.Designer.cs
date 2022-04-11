@@ -34,7 +34,6 @@
             this.Fecha = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnback = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.userNameEntidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +73,6 @@
             this.btnActualizar = new SellPoint.widgets.RJControls();
             this.btnInsert = new SellPoint.widgets.RJControls();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet1)).BeginInit();
@@ -120,18 +118,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(907, 535);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
-            this.btnback.Location = new System.Drawing.Point(12, 503);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(23, 21);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnback.TabIndex = 6;
-            this.btnback.TabStop = false;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // labelUsername
             // 
@@ -373,11 +359,12 @@
             // 
             // getEntiedadesToolStrip
             // 
+            this.getEntiedadesToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.getEntiedadesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.getEntiedadesToolStripButton});
-            this.getEntiedadesToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.getEntiedadesToolStrip.Location = new System.Drawing.Point(263, 2);
             this.getEntiedadesToolStrip.Name = "getEntiedadesToolStrip";
-            this.getEntiedadesToolStrip.Size = new System.Drawing.Size(924, 25);
+            this.getEntiedadesToolStrip.Size = new System.Drawing.Size(129, 25);
             this.getEntiedadesToolStrip.TabIndex = 22;
             this.getEntiedadesToolStrip.Text = "getEntiedadesToolStrip";
             // 
@@ -598,7 +585,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 555);
+            this.ClientSize = new System.Drawing.Size(905, 536);
             this.ControlBox = false;
             this.Controls.Add(this.getEntiedadesToolStrip);
             this.Controls.Add(this.panel1);
@@ -613,7 +600,6 @@
             this.Controls.Add(this.passField);
             this.Controls.Add(this.usernameField);
             this.Controls.Add(this.labelUsername);
-            this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnInsert);
@@ -626,7 +612,6 @@
             this.Text = "Main_Screen";
             this.Load += new System.EventHandler(this.Main_Screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet1)).EndInit();
@@ -649,7 +634,6 @@
         private widgets.RJControls btnInsert;
         private widgets.RJControls btnActualizar;
         private widgets.RJControls btnDelete;
-        private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Label labelUsername;
         private widgets.textBox usernameField;
         private widgets.textBox passField;

@@ -89,7 +89,7 @@ namespace SellPoint.forms_screens
 
                     }
                     else
-                    {
+                    { MessageBox.Show("Este usuario no existe! Por favor Introduzca los credenciales correctos.");
                         uservalidlabel.Visible = true;
                     }
                 }
