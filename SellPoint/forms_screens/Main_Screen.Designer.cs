@@ -49,17 +49,17 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.lblerror = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSistema = new System.Windows.Forms.Button();
+            this.btnAcerca = new System.Windows.Forms.Button();
             this.BtnSalirr = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnAcerca = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnArchivos = new System.Windows.Forms.Button();
             this.btnEntidades = new System.Windows.Forms.Button();
             this.btnTipoEntidades = new System.Windows.Forms.Button();
             this.btnGrupoEntidades = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.btnSistema = new System.Windows.Forms.Button();
-            this.btnArchivos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -349,6 +349,33 @@
             this.panel2.Size = new System.Drawing.Size(115, 27);
             this.panel2.TabIndex = 19;
             // 
+            // btnSistema
+            // 
+            this.btnSistema.BackColor = System.Drawing.Color.Transparent;
+            this.btnSistema.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSistema.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSistema.Location = new System.Drawing.Point(0, 0);
+            this.btnSistema.Name = "btnSistema";
+            this.btnSistema.Size = new System.Drawing.Size(115, 27);
+            this.btnSistema.TabIndex = 5;
+            this.btnSistema.Text = "SISTEMA";
+            this.btnSistema.UseVisualStyleBackColor = false;
+            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click_1);
+            // 
+            // btnAcerca
+            // 
+            this.btnAcerca.BackColor = System.Drawing.Color.Transparent;
+            this.btnAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcerca.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAcerca.Location = new System.Drawing.Point(0, 32);
+            this.btnAcerca.Name = "btnAcerca";
+            this.btnAcerca.Size = new System.Drawing.Size(115, 27);
+            this.btnAcerca.TabIndex = 1;
+            this.btnAcerca.Text = "Acerca de Nosotros";
+            this.btnAcerca.UseVisualStyleBackColor = false;
+            this.btnAcerca.Click += new System.EventHandler(this.btnAcerca_Click);
+            // 
             // BtnSalirr
             // 
             this.BtnSalirr.BackColor = System.Drawing.Color.Transparent;
@@ -375,19 +402,6 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnAcerca
-            // 
-            this.btnAcerca.BackColor = System.Drawing.Color.Transparent;
-            this.btnAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcerca.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAcerca.Location = new System.Drawing.Point(0, 32);
-            this.btnAcerca.Name = "btnAcerca";
-            this.btnAcerca.Size = new System.Drawing.Size(115, 27);
-            this.btnAcerca.TabIndex = 1;
-            this.btnAcerca.Text = "Acerca de Nosotros";
-            this.btnAcerca.UseVisualStyleBackColor = false;
-            this.btnAcerca.Click += new System.EventHandler(this.btnAcerca_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -401,6 +415,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 27);
             this.panel1.TabIndex = 20;
+            // 
+            // btnArchivos
+            // 
+            this.btnArchivos.BackColor = System.Drawing.Color.Transparent;
+            this.btnArchivos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArchivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArchivos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnArchivos.Location = new System.Drawing.Point(0, 0);
+            this.btnArchivos.Name = "btnArchivos";
+            this.btnArchivos.Size = new System.Drawing.Size(115, 27);
+            this.btnArchivos.TabIndex = 4;
+            this.btnArchivos.Text = "ARCHIVOS";
+            this.btnArchivos.UseVisualStyleBackColor = false;
+            this.btnArchivos.Click += new System.EventHandler(this.btnArchivos_Click_1);
             // 
             // btnEntidades
             // 
@@ -449,34 +477,6 @@
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // btnSistema
-            // 
-            this.btnSistema.BackColor = System.Drawing.Color.Transparent;
-            this.btnSistema.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSistema.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSistema.Location = new System.Drawing.Point(0, 0);
-            this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Size = new System.Drawing.Size(115, 27);
-            this.btnSistema.TabIndex = 5;
-            this.btnSistema.Text = "SISTEMA";
-            this.btnSistema.UseVisualStyleBackColor = false;
-            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click_1);
-            // 
-            // btnArchivos
-            // 
-            this.btnArchivos.BackColor = System.Drawing.Color.Transparent;
-            this.btnArchivos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnArchivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchivos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnArchivos.Location = new System.Drawing.Point(0, 0);
-            this.btnArchivos.Name = "btnArchivos";
-            this.btnArchivos.Size = new System.Drawing.Size(115, 27);
-            this.btnArchivos.TabIndex = 4;
-            this.btnArchivos.Text = "ARCHIVOS";
-            this.btnArchivos.UseVisualStyleBackColor = false;
-            this.btnArchivos.Click += new System.EventHandler(this.btnArchivos_Click_1);
             // 
             // Main_Screen
             // 

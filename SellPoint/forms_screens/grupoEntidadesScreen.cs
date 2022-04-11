@@ -8,10 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
 namespace SellPoint.forms_screens
 {
-    public partial class Acerca_de_Screen : Form
+    public partial class grupoEntidadesScreen : Form
     {
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -24,22 +23,32 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public Acerca_de_Screen()
+        public grupoEntidadesScreen()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void rjControls1_Click(object sender, EventArgs e)
+        private void grupoEntidadesScreen_Load(object sender, EventArgs e)
+        {
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
+            labelValidation.Parent = pictureBox1;
+            labelValidation.BackColor = Color.Transparent;
+            labelUsuario.Parent = pictureBox1;
+            labelUsuario.BackColor = Color.Transparent;
+        }
+
+        private void btninsert_Click(object sender, EventArgs e)
+        {
+            if (idGrupoFieldtext.Texts == String.Empty || descripcionbox.Text == String.Empty)
+            {
+                labelValidation.Visible = true;
+            }
+        }
+
+        private void atrasbtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void Acerca_de_Screen_Load(object sender, EventArgs e)
-        {
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
-        }
     }
-    }
-
+}

@@ -52,7 +52,7 @@ namespace SellPoint.forms_screens
 
         private void Login_screen_Load(object sender, EventArgs e)
         {
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
             label_validator_username.Parent = pictureBox1;
             label_validator_username.BackColor = Color.Transparent;
             label_pass_vali.Parent = pictureBox1;

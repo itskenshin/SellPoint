@@ -74,6 +74,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Acerca_de_Screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Acerca_de_Screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
