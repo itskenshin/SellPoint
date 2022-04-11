@@ -41,7 +41,7 @@ namespace SellPoint.forms_screens
         // onloadscreen metodo
         private void Registro_screen_Load(object sender, EventArgs e)
         {
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.VER_POSTIVE);
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.VER_POSTIVE);
             label_validator_username.Parent = pictureBox1;
             label_validator_username.BackColor = Color.Transparent;
             label_pass_vali.Parent = pictureBox1;

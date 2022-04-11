@@ -44,7 +44,7 @@ namespace SellPoint.forms_screens
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
             Hora.Parent = pictureBox1;
             Hora.BackColor = Color.Transparent;
             Fecha.Parent = pictureBox1;
@@ -94,14 +94,17 @@ namespace SellPoint.forms_screens
         }
         // va al mainscreen
         private void button1_Click(object sender, EventArgs e)
-        {   this.Close();
+        {   this.Hide();
             Main_Screen main_Screen = new Main_Screen();
             main_Screen.Show();
+            
         }
 
         private void btnGrupoEntidades_Click(object sender, EventArgs e)
         {
             // ir al form grupo entidades
+            grupoEntidadesScreen gr = new grupoEntidadesScreen();
+            gr.Show();
         }
 
         private void btnTipoEntidades_Click(object sender, EventArgs e)
@@ -112,14 +115,16 @@ namespace SellPoint.forms_screens
         private void btnAcerca_Click(object sender, EventArgs e)
         {
             // ir al form acerca de
+            Acerca_de_Screen ac = new Acerca_de_Screen();
+            ac.Show();
         }
 
         // boton que lleva al login
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Login_screen login_Screen = new Login_screen();
-            login_Screen.Show();
+            this.Hide();
+            Main_Screen ma = new Main_Screen();
+            ma.Show();
         }
         // boton para salir del programa
         private void BtnSalirr_Click(object sender, EventArgs e)
@@ -163,7 +168,7 @@ namespace SellPoint.forms_screens
         // boton para ir para atras 
         private void btnback_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 

@@ -66,6 +66,12 @@
     <Compile Include="forms_screens\Acerca_de_Screen.Designer.cs">
       <DependentUpon>Acerca_de_Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_screens\grupoEntidadesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_screens\grupoEntidadesScreen.Designer.cs">
+      <DependentUpon>grupoEntidadesScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms_screens\Login_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="forms_screens\Acerca_de_Screen.resx">
       <DependentUpon>Acerca_de_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_screens\grupoEntidadesScreen.resx">
+      <DependentUpon>grupoEntidadesScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Login_screen.resx">
       <DependentUpon>Login_screen.cs</DependentUpon>
