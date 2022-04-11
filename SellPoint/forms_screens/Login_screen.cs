@@ -106,7 +106,7 @@ namespace SellPoint.forms_screens
         {
 
             this.Visible = false;
-            Registro_screen r = new Registro_screen();
+            Main_Screen r = new Main_Screen();
             r.Show();
         }
 

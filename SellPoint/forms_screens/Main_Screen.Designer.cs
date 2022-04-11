@@ -34,18 +34,8 @@
             this.Fecha = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnInsert = new SellPoint.widgets.RJControls();
-            this.btnActualizar = new SellPoint.widgets.RJControls();
-            this.btnDelete = new SellPoint.widgets.RJControls();
             this.btnback = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.usernameField = new SellPoint.widgets.textBox();
-            this.passField = new SellPoint.widgets.textBox();
-            this.phoneField = new SellPoint.widgets.textBox();
-            this.descripcionField = new SellPoint.widgets.textBox();
-            this.numeroDocField = new SellPoint.widgets.textBox();
-            this.localidadField = new SellPoint.widgets.textBox();
-            this.direccionField = new SellPoint.widgets.textBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.lblerror = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,6 +50,16 @@
             this.btnGrupoEntidades = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.direccionField = new SellPoint.widgets.textBox();
+            this.localidadField = new SellPoint.widgets.textBox();
+            this.numeroDocField = new SellPoint.widgets.textBox();
+            this.descripcionField = new SellPoint.widgets.textBox();
+            this.phoneField = new SellPoint.widgets.textBox();
+            this.passField = new SellPoint.widgets.textBox();
+            this.usernameField = new SellPoint.widgets.textBox();
+            this.btnDelete = new SellPoint.widgets.RJControls();
+            this.btnActualizar = new SellPoint.widgets.RJControls();
+            this.btnInsert = new SellPoint.widgets.RJControls();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -103,62 +103,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // btnInsert
-            // 
-            this.btnInsert.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnInsert.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnInsert.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnInsert.BorderRadius = 20;
-            this.btnInsert.BorderSize = 0;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(279, 468);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(150, 40);
-            this.btnInsert.TabIndex = 3;
-            this.btnInsert.Text = "INSERTAR";
-            this.btnInsert.TextColor = System.Drawing.Color.White;
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnActualizar.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnActualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnActualizar.BorderRadius = 20;
-            this.btnActualizar.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(486, 468);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(150, 40);
-            this.btnActualizar.TabIndex = 4;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.TextColor = System.Drawing.Color.White;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDelete.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelete.BorderRadius = 20;
-            this.btnDelete.BorderSize = 0;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(698, 468);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(150, 40);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "ELIMINAR";
-            this.btnDelete.TextColor = System.Drawing.Color.White;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnback
             // 
             this.btnback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -181,139 +125,6 @@
             this.labelUsername.Size = new System.Drawing.Size(136, 17);
             this.labelUsername.TabIndex = 7;
             this.labelUsername.Text = "aqui va el username";
-            // 
-            // usernameField
-            // 
-            this.usernameField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.usernameField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.usernameField.BorderFocusColor = System.Drawing.Color.Red;
-            this.usernameField.BorderSize = 2;
-            this.usernameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameField.ForeColor = System.Drawing.SystemColors.Control;
-            this.usernameField.Location = new System.Drawing.Point(12, 145);
-            this.usernameField.Margin = new System.Windows.Forms.Padding(4);
-            this.usernameField.Multiline = false;
-            this.usernameField.Name = "usernameField";
-            this.usernameField.Padding = new System.Windows.Forms.Padding(7);
-            this.usernameField.PasswordChar = false;
-            this.usernameField.Size = new System.Drawing.Size(209, 31);
-            this.usernameField.TabIndex = 8;
-            this.usernameField.Texts = "";
-            this.usernameField.UnderlineStyle = false;
-            // 
-            // passField
-            // 
-            this.passField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.passField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.passField.BorderFocusColor = System.Drawing.Color.Red;
-            this.passField.BorderSize = 2;
-            this.passField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passField.ForeColor = System.Drawing.SystemColors.Control;
-            this.passField.Location = new System.Drawing.Point(13, 200);
-            this.passField.Margin = new System.Windows.Forms.Padding(4);
-            this.passField.Multiline = false;
-            this.passField.Name = "passField";
-            this.passField.Padding = new System.Windows.Forms.Padding(7);
-            this.passField.PasswordChar = true;
-            this.passField.Size = new System.Drawing.Size(209, 31);
-            this.passField.TabIndex = 9;
-            this.passField.Texts = "";
-            this.passField.UnderlineStyle = false;
-            // 
-            // phoneField
-            // 
-            this.phoneField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.phoneField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.phoneField.BorderFocusColor = System.Drawing.Color.Red;
-            this.phoneField.BorderSize = 2;
-            this.phoneField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneField.ForeColor = System.Drawing.SystemColors.Control;
-            this.phoneField.Location = new System.Drawing.Point(12, 252);
-            this.phoneField.Margin = new System.Windows.Forms.Padding(4);
-            this.phoneField.Multiline = false;
-            this.phoneField.Name = "phoneField";
-            this.phoneField.Padding = new System.Windows.Forms.Padding(7);
-            this.phoneField.PasswordChar = false;
-            this.phoneField.Size = new System.Drawing.Size(209, 31);
-            this.phoneField.TabIndex = 10;
-            this.phoneField.Texts = "";
-            this.phoneField.UnderlineStyle = false;
-            // 
-            // descripcionField
-            // 
-            this.descripcionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.descripcionField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.descripcionField.BorderFocusColor = System.Drawing.Color.Red;
-            this.descripcionField.BorderSize = 2;
-            this.descripcionField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descripcionField.ForeColor = System.Drawing.SystemColors.Control;
-            this.descripcionField.Location = new System.Drawing.Point(12, 305);
-            this.descripcionField.Margin = new System.Windows.Forms.Padding(4);
-            this.descripcionField.Multiline = false;
-            this.descripcionField.Name = "descripcionField";
-            this.descripcionField.Padding = new System.Windows.Forms.Padding(7);
-            this.descripcionField.PasswordChar = false;
-            this.descripcionField.Size = new System.Drawing.Size(209, 31);
-            this.descripcionField.TabIndex = 11;
-            this.descripcionField.Texts = "";
-            this.descripcionField.UnderlineStyle = false;
-            // 
-            // numeroDocField
-            // 
-            this.numeroDocField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.numeroDocField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.numeroDocField.BorderFocusColor = System.Drawing.Color.Red;
-            this.numeroDocField.BorderSize = 2;
-            this.numeroDocField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeroDocField.ForeColor = System.Drawing.SystemColors.Control;
-            this.numeroDocField.Location = new System.Drawing.Point(12, 357);
-            this.numeroDocField.Margin = new System.Windows.Forms.Padding(4);
-            this.numeroDocField.Multiline = false;
-            this.numeroDocField.Name = "numeroDocField";
-            this.numeroDocField.Padding = new System.Windows.Forms.Padding(7);
-            this.numeroDocField.PasswordChar = false;
-            this.numeroDocField.Size = new System.Drawing.Size(209, 31);
-            this.numeroDocField.TabIndex = 12;
-            this.numeroDocField.Texts = "";
-            this.numeroDocField.UnderlineStyle = false;
-            // 
-            // localidadField
-            // 
-            this.localidadField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.localidadField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.localidadField.BorderFocusColor = System.Drawing.Color.Red;
-            this.localidadField.BorderSize = 2;
-            this.localidadField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.localidadField.ForeColor = System.Drawing.SystemColors.Control;
-            this.localidadField.Location = new System.Drawing.Point(12, 406);
-            this.localidadField.Margin = new System.Windows.Forms.Padding(4);
-            this.localidadField.Multiline = false;
-            this.localidadField.Name = "localidadField";
-            this.localidadField.Padding = new System.Windows.Forms.Padding(7);
-            this.localidadField.PasswordChar = false;
-            this.localidadField.Size = new System.Drawing.Size(209, 31);
-            this.localidadField.TabIndex = 13;
-            this.localidadField.Texts = "";
-            this.localidadField.UnderlineStyle = false;
-            // 
-            // direccionField
-            // 
-            this.direccionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.direccionField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.direccionField.BorderFocusColor = System.Drawing.Color.Red;
-            this.direccionField.BorderSize = 2;
-            this.direccionField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.direccionField.ForeColor = System.Drawing.SystemColors.Control;
-            this.direccionField.Location = new System.Drawing.Point(12, 459);
-            this.direccionField.Margin = new System.Windows.Forms.Padding(4);
-            this.direccionField.Multiline = false;
-            this.direccionField.Name = "direccionField";
-            this.direccionField.Padding = new System.Windows.Forms.Padding(7);
-            this.direccionField.PasswordChar = false;
-            this.direccionField.Size = new System.Drawing.Size(209, 31);
-            this.direccionField.TabIndex = 14;
-            this.direccionField.Texts = "";
-            this.direccionField.UnderlineStyle = false;
             // 
             // dataGridView
             // 
@@ -477,6 +288,195 @@
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // direccionField
+            // 
+            this.direccionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.direccionField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.direccionField.BorderFocusColor = System.Drawing.Color.Red;
+            this.direccionField.BorderSize = 2;
+            this.direccionField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.direccionField.ForeColor = System.Drawing.SystemColors.Control;
+            this.direccionField.Location = new System.Drawing.Point(12, 459);
+            this.direccionField.Margin = new System.Windows.Forms.Padding(4);
+            this.direccionField.Multiline = false;
+            this.direccionField.Name = "direccionField";
+            this.direccionField.Padding = new System.Windows.Forms.Padding(7);
+            this.direccionField.PasswordChar = false;
+            this.direccionField.Size = new System.Drawing.Size(209, 31);
+            this.direccionField.TabIndex = 14;
+            this.direccionField.Texts = "";
+            this.direccionField.UnderlineStyle = false;
+            // 
+            // localidadField
+            // 
+            this.localidadField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.localidadField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.localidadField.BorderFocusColor = System.Drawing.Color.Red;
+            this.localidadField.BorderSize = 2;
+            this.localidadField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.localidadField.ForeColor = System.Drawing.SystemColors.Control;
+            this.localidadField.Location = new System.Drawing.Point(12, 406);
+            this.localidadField.Margin = new System.Windows.Forms.Padding(4);
+            this.localidadField.Multiline = false;
+            this.localidadField.Name = "localidadField";
+            this.localidadField.Padding = new System.Windows.Forms.Padding(7);
+            this.localidadField.PasswordChar = false;
+            this.localidadField.Size = new System.Drawing.Size(209, 31);
+            this.localidadField.TabIndex = 13;
+            this.localidadField.Texts = "";
+            this.localidadField.UnderlineStyle = false;
+            // 
+            // numeroDocField
+            // 
+            this.numeroDocField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.numeroDocField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.numeroDocField.BorderFocusColor = System.Drawing.Color.Red;
+            this.numeroDocField.BorderSize = 2;
+            this.numeroDocField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeroDocField.ForeColor = System.Drawing.SystemColors.Control;
+            this.numeroDocField.Location = new System.Drawing.Point(12, 357);
+            this.numeroDocField.Margin = new System.Windows.Forms.Padding(4);
+            this.numeroDocField.Multiline = false;
+            this.numeroDocField.Name = "numeroDocField";
+            this.numeroDocField.Padding = new System.Windows.Forms.Padding(7);
+            this.numeroDocField.PasswordChar = false;
+            this.numeroDocField.Size = new System.Drawing.Size(209, 31);
+            this.numeroDocField.TabIndex = 12;
+            this.numeroDocField.Texts = "";
+            this.numeroDocField.UnderlineStyle = false;
+            // 
+            // descripcionField
+            // 
+            this.descripcionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.descripcionField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.descripcionField.BorderFocusColor = System.Drawing.Color.Red;
+            this.descripcionField.BorderSize = 2;
+            this.descripcionField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcionField.ForeColor = System.Drawing.SystemColors.Control;
+            this.descripcionField.Location = new System.Drawing.Point(12, 305);
+            this.descripcionField.Margin = new System.Windows.Forms.Padding(4);
+            this.descripcionField.Multiline = false;
+            this.descripcionField.Name = "descripcionField";
+            this.descripcionField.Padding = new System.Windows.Forms.Padding(7);
+            this.descripcionField.PasswordChar = false;
+            this.descripcionField.Size = new System.Drawing.Size(209, 31);
+            this.descripcionField.TabIndex = 11;
+            this.descripcionField.Texts = "";
+            this.descripcionField.UnderlineStyle = false;
+            // 
+            // phoneField
+            // 
+            this.phoneField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.phoneField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.phoneField.BorderFocusColor = System.Drawing.Color.Red;
+            this.phoneField.BorderSize = 2;
+            this.phoneField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneField.ForeColor = System.Drawing.SystemColors.Control;
+            this.phoneField.Location = new System.Drawing.Point(12, 252);
+            this.phoneField.Margin = new System.Windows.Forms.Padding(4);
+            this.phoneField.Multiline = false;
+            this.phoneField.Name = "phoneField";
+            this.phoneField.Padding = new System.Windows.Forms.Padding(7);
+            this.phoneField.PasswordChar = false;
+            this.phoneField.Size = new System.Drawing.Size(209, 31);
+            this.phoneField.TabIndex = 10;
+            this.phoneField.Texts = "";
+            this.phoneField.UnderlineStyle = false;
+            // 
+            // passField
+            // 
+            this.passField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.passField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.passField.BorderFocusColor = System.Drawing.Color.Red;
+            this.passField.BorderSize = 2;
+            this.passField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passField.ForeColor = System.Drawing.SystemColors.Control;
+            this.passField.Location = new System.Drawing.Point(13, 200);
+            this.passField.Margin = new System.Windows.Forms.Padding(4);
+            this.passField.Multiline = false;
+            this.passField.Name = "passField";
+            this.passField.Padding = new System.Windows.Forms.Padding(7);
+            this.passField.PasswordChar = true;
+            this.passField.Size = new System.Drawing.Size(209, 31);
+            this.passField.TabIndex = 9;
+            this.passField.Texts = "";
+            this.passField.UnderlineStyle = false;
+            // 
+            // usernameField
+            // 
+            this.usernameField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.usernameField.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.usernameField.BorderFocusColor = System.Drawing.Color.Red;
+            this.usernameField.BorderSize = 2;
+            this.usernameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameField.ForeColor = System.Drawing.SystemColors.Control;
+            this.usernameField.Location = new System.Drawing.Point(12, 145);
+            this.usernameField.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameField.Multiline = false;
+            this.usernameField.Name = "usernameField";
+            this.usernameField.Padding = new System.Windows.Forms.Padding(7);
+            this.usernameField.PasswordChar = false;
+            this.usernameField.Size = new System.Drawing.Size(209, 31);
+            this.usernameField.TabIndex = 8;
+            this.usernameField.Texts = "";
+            this.usernameField.UnderlineStyle = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDelete.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(698, 468);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(150, 40);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "ELIMINAR";
+            this.btnDelete.TextColor = System.Drawing.Color.White;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnActualizar.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnActualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(486, 468);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(150, 40);
+            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.TextColor = System.Drawing.Color.White;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnInsert.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnInsert.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnInsert.BorderRadius = 20;
+            this.btnInsert.BorderSize = 0;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(279, 468);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(150, 40);
+            this.btnInsert.TabIndex = 3;
+            this.btnInsert.Text = "INSERTAR";
+            this.btnInsert.TextColor = System.Drawing.Color.White;
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // Main_Screen
             // 
