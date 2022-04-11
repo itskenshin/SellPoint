@@ -96,6 +96,12 @@
     <Compile Include="forms_screens\Splash_Screen.Designer.cs">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_screens\tipoEntidadesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_screens\tipoEntidadesScreen.Designer.cs">
+      <DependentUpon>tipoEntidadesScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="widgets\RJControls.cs">
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms_screens\Splash_Screen.resx">
       <DependentUpon>Splash_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_screens\tipoEntidadesScreen.resx">
+      <DependentUpon>tipoEntidadesScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
