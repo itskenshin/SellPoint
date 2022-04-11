@@ -43,6 +43,7 @@ namespace SellPoint.forms_screens
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
+            labelUsername.Text = Login_screen.guardar;
             // TODO: This line of code loads data into the 'sellPointDataSet1.Entidades' table. You can move, or remove it, as needed.
             this.entidadesTableAdapter.Fill(this.sellPointDataSet1.Entidades);
             // TODO: This line of code loads data into the 'sellPointDataSet.Entidades' table. You can move, or remove it, as needed.
@@ -247,6 +248,8 @@ namespace SellPoint.forms_screens
                 e.Handled = true;
             }
         }
+
+       
     }
 }
 
