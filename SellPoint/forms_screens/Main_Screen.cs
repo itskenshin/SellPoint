@@ -191,11 +191,7 @@ namespace SellPoint.forms_screens
         {
             timer2.Start();
         }
-        // boton para ir para atras 
-        private void btnback_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void getEntidadesToolStripButton_Click(object sender, EventArgs e)
         {
