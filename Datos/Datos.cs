@@ -45,7 +45,6 @@ namespace Datos
         public  void CloseConnection()
         {
             _connection.Close();
-            _connection.Dispose();
         }
 
 

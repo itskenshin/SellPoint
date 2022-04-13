@@ -18,7 +18,7 @@ namespace SellPoint
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Login_screen());
+            Application.Run(new Main_Screen());
 
         }
     }

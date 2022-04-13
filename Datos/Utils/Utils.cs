@@ -30,5 +30,6 @@ namespace Datos.Utils
         public static string Status = "@Status";
         public static string NoEliminable = "@NoEliminable";
         public static string FechaRegistro = "@FechaRegistro";
+        public static string Id_Entidad = "@id_Entidad";
     }
 }

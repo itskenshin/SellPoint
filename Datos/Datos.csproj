@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Datos.cs" />
+    <Compile Include="Modelos\EntidadesTabla.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="Modelos\Entidades.cs" />
     <Compile Include="Modelos\GrupoEntidades.cs" />
