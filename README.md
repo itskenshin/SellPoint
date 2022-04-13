@@ -6,13 +6,13 @@ Asunto. Práctica Tipo Reto para medir el conocimiento de los conceptos y elemen
 Este repositorio contiene código fuente y consignas a realizar en C# 
 <br />
 <br />
-# Login:
+Login:
 <br /><br />
 ![image](https://user-images.githubusercontent.com/71537694/163285334-a7c3a5b7-48e6-49ba-95cd-0a70d913c6ba.png)
 
 <br />
 <br />
-* MainScreen
+MainScreen
 <br /><br />
 ![image](https://user-images.githubusercontent.com/71537694/163285946-6180180e-965b-4057-a0a7-ad2519a6906d.png)
 
