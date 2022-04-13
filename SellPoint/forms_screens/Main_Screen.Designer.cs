@@ -54,6 +54,14 @@
             this.entidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sellPointDataSet = new SellPoint.SellPointDataSet();
             this.entidadesTableAdapter = new SellPoint.SellPointDataSetTableAdapters.EntidadesTableAdapter();
+            this.DocNumErr = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBoxTipoEntidad = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.comboBoxUserRol = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxEliminable = new System.Windows.Forms.ComboBox();
+            this.ComentarioBoxField = new System.Windows.Forms.TextBox();
             this.direccionField = new SellPoint.widgets.textBox();
             this.localidadField = new SellPoint.widgets.textBox();
             this.numeroDocField = new SellPoint.widgets.textBox();
@@ -64,7 +72,7 @@
             this.btnDelete = new SellPoint.widgets.RJControls();
             this.btnActualizar = new SellPoint.widgets.RJControls();
             this.btnInsert = new SellPoint.widgets.RJControls();
-            this.DocNumErr = new System.Windows.Forms.Label();
+            this.comboBoxGrupoEntidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).BeginInit();
@@ -73,6 +81,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Hora
@@ -312,6 +321,92 @@
             // 
             this.entidadesTableAdapter.ClearBeforeFill = true;
             // 
+            // DocNumErr
+            // 
+            this.DocNumErr.AutoSize = true;
+            this.DocNumErr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DocNumErr.ForeColor = System.Drawing.Color.Red;
+            this.DocNumErr.Location = new System.Drawing.Point(430, 53);
+            this.DocNumErr.Name = "DocNumErr";
+            this.DocNumErr.Size = new System.Drawing.Size(292, 17);
+            this.DocNumErr.TabIndex = 21;
+            this.DocNumErr.Text = "Numero de Documento solo admite numeros!";
+            this.DocNumErr.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(906, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(245, 535);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // comboBoxTipoEntidad
+            // 
+            this.comboBoxTipoEntidad.FormattingEnabled = true;
+            this.comboBoxTipoEntidad.Items.AddRange(new object[] {
+            "Fisica",
+            "Juridica"});
+            this.comboBoxTipoEntidad.Location = new System.Drawing.Point(1020, 21);
+            this.comboBoxTipoEntidad.Name = "comboBoxTipoEntidad";
+            this.comboBoxTipoEntidad.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTipoEntidad.TabIndex = 23;
+            // 
+            // comboBoxTipoDocumento
+            // 
+            this.comboBoxTipoDocumento.FormattingEnabled = true;
+            this.comboBoxTipoDocumento.Items.AddRange(new object[] {
+            "RNC",
+            "Cedula",
+            "Pasaporte"});
+            this.comboBoxTipoDocumento.Location = new System.Drawing.Point(1030, 73);
+            this.comboBoxTipoDocumento.Name = "comboBoxTipoDocumento";
+            this.comboBoxTipoDocumento.Size = new System.Drawing.Size(111, 21);
+            this.comboBoxTipoDocumento.TabIndex = 24;
+            // 
+            // comboBoxUserRol
+            // 
+            this.comboBoxUserRol.FormattingEnabled = true;
+            this.comboBoxUserRol.Items.AddRange(new object[] {
+            "Admin",
+            "Supervisor",
+            "User"});
+            this.comboBoxUserRol.Location = new System.Drawing.Point(983, 124);
+            this.comboBoxUserRol.Name = "comboBoxUserRol";
+            this.comboBoxUserRol.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxUserRol.TabIndex = 25;
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "Activa",
+            "Inactiva"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(973, 176);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.TabIndex = 26;
+            // 
+            // comboBoxEliminable
+            // 
+            this.comboBoxEliminable.FormattingEnabled = true;
+            this.comboBoxEliminable.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.comboBoxEliminable.Location = new System.Drawing.Point(1001, 228);
+            this.comboBoxEliminable.Name = "comboBoxEliminable";
+            this.comboBoxEliminable.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEliminable.TabIndex = 27;
+            // 
+            // ComentarioBoxField
+            // 
+            this.ComentarioBoxField.Location = new System.Drawing.Point(942, 369);
+            this.ComentarioBoxField.Multiline = true;
+            this.ComentarioBoxField.Name = "ComentarioBoxField";
+            this.ComentarioBoxField.Size = new System.Drawing.Size(180, 139);
+            this.ComentarioBoxField.TabIndex = 28;
+            // 
             // direccionField
             // 
             this.direccionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -502,24 +597,31 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // DocNumErr
+            // comboBoxGrupoEntidad
             // 
-            this.DocNumErr.AutoSize = true;
-            this.DocNumErr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DocNumErr.ForeColor = System.Drawing.Color.Red;
-            this.DocNumErr.Location = new System.Drawing.Point(430, 53);
-            this.DocNumErr.Name = "DocNumErr";
-            this.DocNumErr.Size = new System.Drawing.Size(292, 17);
-            this.DocNumErr.TabIndex = 21;
-            this.DocNumErr.Text = "Numero de Documento solo admite numeros!";
-            this.DocNumErr.Visible = false;
+            this.comboBoxGrupoEntidad.FormattingEnabled = true;
+            this.comboBoxGrupoEntidad.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.comboBoxGrupoEntidad.Location = new System.Drawing.Point(1020, 280);
+            this.comboBoxGrupoEntidad.Name = "comboBoxGrupoEntidad";
+            this.comboBoxGrupoEntidad.Size = new System.Drawing.Size(102, 21);
+            this.comboBoxGrupoEntidad.TabIndex = 29;
             // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 536);
+            this.ClientSize = new System.Drawing.Size(1153, 536);
             this.ControlBox = false;
+            this.Controls.Add(this.comboBoxGrupoEntidad);
+            this.Controls.Add(this.ComentarioBoxField);
+            this.Controls.Add(this.comboBoxEliminable);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.comboBoxUserRol);
+            this.Controls.Add(this.comboBoxTipoDocumento);
+            this.Controls.Add(this.comboBoxTipoEntidad);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.DocNumErr);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -552,6 +654,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -593,5 +696,13 @@
         private SellPointDataSet sellPointDataSet1;
         private System.Windows.Forms.BindingSource entidadesBindingSource1;
         private System.Windows.Forms.Label DocNumErr;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox comboBoxTipoEntidad;
+        private System.Windows.Forms.ComboBox comboBoxTipoDocumento;
+        private System.Windows.Forms.ComboBox comboBoxUserRol;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.ComboBox comboBoxEliminable;
+        private System.Windows.Forms.TextBox ComentarioBoxField;
+        private System.Windows.Forms.ComboBox comboBoxGrupoEntidad;
     }
 }
