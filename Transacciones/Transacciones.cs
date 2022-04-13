@@ -24,9 +24,24 @@ namespace Transacciones
             _command = _db._command;
         }
 
-        public Entidades ActualizarEntidad(string user)
+        public bool ActualizarEntidad(EntidadesTabla entidadesTabla,string UserEntidad,string pass)
         {
-            throw new NotImplementedException();
+            var id = GetUsernaemEntidadId(UserEntidad);
+            var password = GetPassowrdmEntidad(id);
+            
+                _db.OpenConnection();
+                var query = "UPDATE [dbo].Entidades SET [Descripcion] = " + "'" + entidadesTabla.Descripcion + "'" + ", [Direccion] = " + "'" + entidadesTabla.Direccion + "'" + " , [Localidad] = " + "'" + entidadesTabla.Localidad + "'" + ", [NumeroDocumento] = " + "'" + entidadesTabla.NumeroDocumento + "'" + ", [Telefonos] =" + "'" + entidadesTabla.Telefonos + "'" + ", [UserNameEntidad] =" + "'" + entidadesTabla.UserNameEntidad + "'" + ", [PassworEntidad] = " + "'" + pass + "'" + " WHERE id_Entidad = " + id;
+                var command = new SqlCommand(query, _db._connection);
+                command.ExecuteNonQuery();
+
+
+                _db.CloseConnection();
+            
+
+          
+            
+            return true;
+
         }
 
         public bool AgregarEntidad(Entidades entidades)
@@ -66,9 +81,11 @@ namespace Transacciones
 
         public Entidades Autenticacion(string user, string password)
         {
+
             Entidades Entidades = new Entidades();
             _db.OpenConnection();
             var command = _db._command;
+            command.Parameters.Clear();
             command.CommandText = "SPAutenticar";
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.AddWithValue("User", user);
@@ -87,8 +104,39 @@ namespace Transacciones
             }
             else
             {
+                _db.CloseConnection();
                 return null;
             }
+        }
+
+        public EntidadesTabla BuscarEntidad(string UsernameEntidad)
+        {
+            EntidadesTabla entidadesTabla = new EntidadesTabla();
+
+            
+            _db.OpenConnection();
+            var command = _db._command;
+            command.CommandText = "usp_EntidadesSelect";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue(Utils.UserNameEntidad, UsernameEntidad);
+            var result = command.ExecuteReader();
+            while (result.Read())
+            {
+                EntidadesTabla ent = new EntidadesTabla()
+                {
+                    UserNameEntidad = result["UserNameEntidad"].ToString(),
+                    Descripcion = result["Descripcion"].ToString(),
+                    Direccion = result["Direccion"].ToString(),
+                    Localidad = result["Localidad"].ToString(),
+                    NumeroDocumento = int.Parse(result["NumeroDocumento"].ToString()),
+                    Telefonos = result["Telefonos"].ToString()
+                };
+                entidadesTabla = ent;
+               
+            }
+            _db.CloseConnection();
+            return entidadesTabla;
         }
 
         public bool EliminarEntidades(string user)
@@ -96,11 +144,42 @@ namespace Transacciones
             throw new NotImplementedException();
         }
 
-        public List<Entidades> ListaEntidades()
+        public int GetUsernaemEntidadId(string usernameEntidad)
+        {
+            int Id = 0;
+            _db.OpenConnection();
+            var query = "select id_Entidad from Entidades where UserNameEntidad = " +"'" + usernameEntidad + "'";
+            var command = new SqlCommand(query,_db._connection);
+          var reader =  command.ExecuteReader();
+            while (reader.Read())
+            {
+                Id = int.Parse(reader["Id_Entidad"].ToString());
+            }
+            _db.CloseConnection();
+            return Id;
+
+        }
+        public string GetPassowrdmEntidad(int id)
+        {
+            string password = "";
+            _db.OpenConnection();
+            var query = "select PassworEntidad from Entidades where id_Entidad = " + "'" + id + "'";
+            var command = new SqlCommand(query, _db._connection);
+            var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                password = reader["PassworEntidad"].ToString();
+            }
+            _db.CloseConnection();
+            return password;
+
+        }
+
+        public List<EntidadesTabla> ListaEntidades()
         {
 
-            List<Entidades> Entidades = new List<Entidades>();
-
+            List<EntidadesTabla> Entidades = new List<EntidadesTabla>();
+           
 
             _db.OpenConnection();
             var query = "Select t.UserNameEntidad,t.Telefonos,t.NumeroDocumento,t.Descripcion,t.Localidad, t.Direccion  from dbo.Entidades t";
@@ -111,7 +190,7 @@ namespace Transacciones
             var result = command.ExecuteReader();      
             while (result.Read())
             {
-                Entidades ent =  new Entidades()
+                EntidadesTabla ent =  new EntidadesTabla()
                 {
                     UserNameEntidad = result["UserNameEntidad"].ToString(),
                     Descripcion = result["Descripcion"].ToString(),
@@ -122,10 +201,11 @@ namespace Transacciones
                 };
              Entidades.Add(ent);
             }
-
+            
             if (result != null)
             {
                 _db.CloseConnection();
+             
                 return Entidades;
             }
             else

@@ -37,12 +37,6 @@
             this.btnback = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.userNameEntidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefonos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sellPointDataSet1 = new SellPoint.SellPointDataSet();
             this.lblerror = new System.Windows.Forms.Label();
@@ -58,8 +52,6 @@
             this.btnGrupoEntidades = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.getEntiedadesToolStrip = new System.Windows.Forms.ToolStrip();
-            this.getEntiedadesToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.entidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sellPointDataSet = new SellPoint.SellPointDataSet();
             this.entidadesTableAdapter = new SellPoint.SellPointDataSetTableAdapters.EntidadesTableAdapter();
@@ -73,6 +65,7 @@
             this.btnDelete = new SellPoint.widgets.RJControls();
             this.btnActualizar = new SellPoint.widgets.RJControls();
             this.btnInsert = new SellPoint.widgets.RJControls();
+            this.DocNumErr = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -80,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.getEntiedadesToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).BeginInit();
             this.SuspendLayout();
@@ -115,9 +107,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(907, 535);
+            this.pictureBox1.Size = new System.Drawing.Size(910, 535);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -148,63 +140,13 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userNameEntidadDataGridViewTextBoxColumn,
-            this.Telefonos,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.direccionDataGridViewTextBoxColumn,
-            this.localidadDataGridViewTextBoxColumn,
-            this.numeroDocumentoDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.entidadesBindingSource1;
             this.dataGridView.Location = new System.Drawing.Point(243, 77);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(634, 385);
             this.dataGridView.TabIndex = 15;
-            // 
-            // userNameEntidadDataGridViewTextBoxColumn
-            // 
-            this.userNameEntidadDataGridViewTextBoxColumn.DataPropertyName = "UserNameEntidad";
-            this.userNameEntidadDataGridViewTextBoxColumn.HeaderText = "UserNameEntidad";
-            this.userNameEntidadDataGridViewTextBoxColumn.Name = "userNameEntidadDataGridViewTextBoxColumn";
-            this.userNameEntidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Telefonos
-            // 
-            this.Telefonos.DataPropertyName = "Descripcion";
-            this.Telefonos.HeaderText = "Telefono";
-            this.Telefonos.Name = "Telefonos";
-            this.Telefonos.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // localidadDataGridViewTextBoxColumn
-            // 
-            this.localidadDataGridViewTextBoxColumn.DataPropertyName = "Localidad";
-            this.localidadDataGridViewTextBoxColumn.HeaderText = "Localidad";
-            this.localidadDataGridViewTextBoxColumn.Name = "localidadDataGridViewTextBoxColumn";
-            this.localidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroDocumentoDataGridViewTextBoxColumn
-            // 
-            this.numeroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "NumeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn.HeaderText = "NumeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn.Name = "numeroDocumentoDataGridViewTextBoxColumn";
-            this.numeroDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // entidadesBindingSource1
             // 
@@ -371,24 +313,6 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // getEntiedadesToolStrip
-            // 
-            this.getEntiedadesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.getEntiedadesToolStripButton});
-            this.getEntiedadesToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.getEntiedadesToolStrip.Name = "getEntiedadesToolStrip";
-            this.getEntiedadesToolStrip.Size = new System.Drawing.Size(924, 25);
-            this.getEntiedadesToolStrip.TabIndex = 22;
-            this.getEntiedadesToolStrip.Text = "getEntiedadesToolStrip";
-            // 
-            // getEntiedadesToolStripButton
-            // 
-            this.getEntiedadesToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.getEntiedadesToolStripButton.Name = "getEntiedadesToolStripButton";
-            this.getEntiedadesToolStripButton.Size = new System.Drawing.Size(86, 22);
-            this.getEntiedadesToolStripButton.Text = "GetEntiedades";
-            this.getEntiedadesToolStripButton.Click += new System.EventHandler(this.getEntiedadesToolStripButton_Click);
-            // 
             // entidadesBindingSource
             // 
             this.entidadesBindingSource.DataMember = "Entidades";
@@ -459,7 +383,6 @@
             this.numeroDocField.TabIndex = 12;
             this.numeroDocField.Texts = "";
             this.numeroDocField.UnderlineStyle = false;
-            this.numeroDocField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeroDocField_KeyPress);
             // 
             // descripcionField
             // 
@@ -594,13 +517,25 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // DocNumErr
+            // 
+            this.DocNumErr.AutoSize = true;
+            this.DocNumErr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DocNumErr.ForeColor = System.Drawing.Color.Red;
+            this.DocNumErr.Location = new System.Drawing.Point(430, 53);
+            this.DocNumErr.Name = "DocNumErr";
+            this.DocNumErr.Size = new System.Drawing.Size(292, 17);
+            this.DocNumErr.TabIndex = 21;
+            this.DocNumErr.Text = "Numero de Documento solo admite numeros!";
+            this.DocNumErr.Visible = false;
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 555);
+            this.ClientSize = new System.Drawing.Size(913, 536);
             this.ControlBox = false;
-            this.Controls.Add(this.getEntiedadesToolStrip);
+            this.Controls.Add(this.DocNumErr);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblerror);
@@ -632,8 +567,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.getEntiedadesToolStrip.ResumeLayout(false);
-            this.getEntiedadesToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -675,15 +608,8 @@
         private SellPointDataSet sellPointDataSet;
         private System.Windows.Forms.BindingSource entidadesBindingSource;
         private SellPointDataSetTableAdapters.EntidadesTableAdapter entidadesTableAdapter;
-        private System.Windows.Forms.ToolStrip getEntiedadesToolStrip;
-        private System.Windows.Forms.ToolStripButton getEntiedadesToolStripButton;
         private SellPointDataSet sellPointDataSet1;
         private System.Windows.Forms.BindingSource entidadesBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userNameEntidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefonos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn localidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDocumentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label DocNumErr;
     }
 }

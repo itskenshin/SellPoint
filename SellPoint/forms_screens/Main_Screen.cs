@@ -16,6 +16,7 @@ namespace SellPoint.forms_screens
     {
         Transacciones.Transacciones Transacciones = new Transacciones.Transacciones();
         private bool isCollapse;
+        private string UserEntidadSelected { get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (   // para poner las esquinas redondas
@@ -31,7 +32,10 @@ namespace SellPoint.forms_screens
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            
+
+
+            this.dataGridView.DataSource = Transacciones.ListaEntidades();
+
         }
         // fecha y hora actual
         private void HoraFecha_Tick(object sender, EventArgs e)
@@ -43,10 +47,7 @@ namespace SellPoint.forms_screens
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sellPointDataSet1.Entidades' table. You can move, or remove it, as needed.
-            this.entidadesTableAdapter.Fill(this.sellPointDataSet1.Entidades);
-            // TODO: This line of code loads data into the 'sellPointDataSet.Entidades' table. You can move, or remove it, as needed.
-            this.entidadesTableAdapter.Fill(this.sellPointDataSet.Entidades);
+            
             SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
             Hora.Parent = pictureBox1;
             Hora.BackColor = Color.Transparent;
@@ -56,7 +57,8 @@ namespace SellPoint.forms_screens
             labelUsername.BackColor = Color.Transparent;
             lblerror.Parent = pictureBox1;
             lblerror.BackColor = Color.Transparent;
-            
+            DocNumErr.BackColor = Color.Transparent;
+
         }
         // boton delete para la tabla de base datos
         private void btnDelete_Click(object sender, EventArgs e)
@@ -72,24 +74,40 @@ namespace SellPoint.forms_screens
             {
                 lblerror.Visible = true;
             }
-            if (usernameField.Texts != String.Empty || passField.Texts != String.Empty ||
-              phoneField.Texts != String.Empty || direccionField.Texts != String.Empty ||
-              numeroDocField.Texts != String.Empty || localidadField.Texts != String.Empty || descripcionField.Texts != String.Empty)
+            if (int.Parse(numeroDocField.Texts).GetType().ToString() == "System.String")
             {
-                Datos.Modelos.Entidades entidades = new Entidades();
-                entidades.UserNameEntidad = usernameField.Texts;
-                entidades.PasswordEntidad = passField.Texts;
-                entidades.Telefonos = phoneField.Texts;
-                entidades.Direccion = direccionField.Texts;
-                entidades.NumeroDocumento = int.Parse(numeroDocField.Texts);
-                entidades.Localidad = localidadField.Texts;
-                entidades.Descripcion = descripcionField.Texts;
-                Transacciones.AgregarEntidad(entidades);
+                DocNumErr.Visible = true;
+            }
+           
+            if (usernameField.Texts != String.Empty && passField.Texts != String.Empty &&
+              phoneField.Texts != String.Empty && direccionField.Texts != String.Empty &&
+              numeroDocField.Texts != String.Empty && localidadField.Texts != string.Empty && descripcionField.Texts != String.Empty)
+            {
+                var messageValuee = MessageBox.Show("Estas seguro que quieres Agregar Entidad de ? " + usernameField.Texts,
+                                     "Confirmar",
+                                     MessageBoxButtons.YesNo);
+                if (messageValuee == DialogResult.Yes)
+                {
+                    Datos.Modelos.Entidades entidades = new Entidades();
+                    entidades.UserNameEntidad = usernameField.Texts;
+                    entidades.PasswordEntidad = passField.Texts;
+                    entidades.Telefonos = phoneField.Texts;
+                    entidades.Direccion = direccionField.Texts;
+                    entidades.NumeroDocumento = int.Parse(numeroDocField.Texts);
+                    entidades.Localidad = localidadField.Texts;
+                    entidades.Descripcion = descripcionField.Texts;
+                    Transacciones.AgregarEntidad(entidades);
+                    var messageValue = MessageBox.Show("Se Agrego Exitosamente la Entidad ",
+                                         "Confirmar",
+                                         MessageBoxButtons.OK);
+                    ActualizarTabla();
+                }
                 ActualizarTabla();
+
             }
 
 
-           
+
 
 
         }
@@ -99,7 +117,7 @@ namespace SellPoint.forms_screens
             if (isCollapse)
             {
                 panel1.Height += 100;
-                if(panel1.Size == panel1.MaximumSize)
+                if (panel1.Size == panel1.MaximumSize)
                 {
                     timer1.Stop();
                     isCollapse = false;
@@ -117,10 +135,11 @@ namespace SellPoint.forms_screens
         }
         // va al mainscreen
         private void button1_Click(object sender, EventArgs e)
-        {   this.Hide();
+        {
+            this.Hide();
             Main_Screen main_Screen = new Main_Screen();
             main_Screen.Show();
-            
+
         }
 
         private void btnGrupoEntidades_Click(object sender, EventArgs e)
@@ -196,61 +215,86 @@ namespace SellPoint.forms_screens
 
         }
 
-        private void getEntidadesToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.entidadesTableAdapter.GetEntidades(this.sellPointDataSet.Entidades);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
-        }
 
-        private void getEntiedadesToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.entidadesTableAdapter.GetEntiedades(this.sellPointDataSet.Entidades);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
-        }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+
+
+            var datos = CaputrarDatos();
+           var messageValue =  MessageBox.Show("Estas seguro que quieres actualizar a "+ UserEntidadSelected,
+                                     "Confirmar",
+                                     MessageBoxButtons.YesNo);
+            if (messageValue == DialogResult.Yes)
+            {
+                Transacciones.ActualizarEntidad(datos, UserEntidadSelected,passField.Texts);
+                MessageBox.Show("Se Actualizo el Usuario Entidad!  " + UserEntidadSelected,
+                                     "Confirmar",
+                                     MessageBoxButtons.OK);
+                ActualizarTabla();
+            }
             ActualizarTabla();
 
-            
+
+            //TODO: Validacion de que esten seleccionados
+
+
         }
 
 
         private void ActualizarTabla()
         {
             var dataSource = Transacciones.ListaEntidades();
-                this.dataGridView.DataSource = dataSource;
+            this.dataGridView.DataSource = dataSource;
         }
 
         private void numeroDocField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-       (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
 
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LimpiarCampos();
+            var d = dataGridView.Rows[e.RowIndex];
+            var UserNameEntidad = d.Cells[5].Value.ToString();
+            UserEntidadSelected = UserNameEntidad;
+            var resultados = Transacciones.BuscarEntidad(UserNameEntidad);
+
+            usernameField.Texts = resultados.UserNameEntidad;
+            phoneField.Texts = resultados.Telefonos;
+            descripcionField.Texts = resultados.Descripcion;
+            localidadField.Texts = resultados.Localidad;
+            direccionField.Texts = resultados.Direccion;
+            numeroDocField.Texts = resultados.NumeroDocumento.ToString();
+
+        }
+
+        private void LimpiarCampos()
+        {
+            usernameField.Text = String.Empty;
+            phoneField.Texts = String.Empty;
+            descripcionField.Texts = String.Empty;
+            localidadField.Text = String.Empty;
+            direccionField.Texts = String.Empty;
+
+        }
+
+        private EntidadesTabla CaputrarDatos()
+        {
+            EntidadesTabla entidadesTabla = new EntidadesTabla();
+            entidadesTabla.UserNameEntidad = usernameField.Texts;
+            entidadesTabla.Direccion = direccionField.Texts;
+            entidadesTabla.Localidad = direccionField.Texts;
+            entidadesTabla.Descripcion = descripcionField.Texts;
+            entidadesTabla.NumeroDocumento = int.Parse(numeroDocField.Texts);
+            entidadesTabla.Telefonos = phoneField.Texts.ToString();
+            return entidadesTabla;
         }
     }
+}
 
 
 

@@ -124,7 +124,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA5MAAAI/CAYAAADqRo2oAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAS9FJREFUeF7t3fuTXOd5J/b9f+KLhBmORJEDkDMDDG68giRAUryIBGxZEuUFJZDK
+        DAAACwwBP0AiyAAAS9FJREFUeF7t3fuTXOd5J/b9f+KLhBmORJEDkDMDDG68giRAUryIBGxZEuUFJZDK
         bkJLWjveNWWr1jfCl/Wq1oI3tja2wFjrrO0CUuUqRxZY8Tra2FTKLrmckOXKVjlVjJ04P53M08A7fufg
         6ekr0C/Rn7fqU+g+77l3P1Xni/ecnn909OjRDgAAACYhTAIAADAxYRIAAICJCZMAAABMTJgEAABgYsIk
         AAAAExMmAQAAmJgwCQAAwMSESQAAACYmTAIAADAxYRIAAICJCZMAAABMTJgEAABgYsIkAAAAE9s3TH7y
@@ -454,16 +454,13 @@
   <data name="btnback.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAOhJREFUSEvtld0RgjAQhCmBEiyBEijBDqQUO7OElMA7EFKC7jrLAEIICT7oDDuz
+        DAAACwwBP0AiyAAAAOhJREFUSEvtld0RgjAQhCmBEiyBEijBDqQUO7OElMA7EFKC7jrLAEIICT7oDDuz
         D1zuPo78kZ0Kyjl36/u+TrTpuu4q1FJKeh4w+nO5cKMQvCjBtG1bxpp1rCdHyFET+EOhKLHuN+H8dOQs
         51MKwXOsduVbcWvtHcVmtRjahIckOL+sXgNswtk5AT4PxXLdNE2h0reGcR98mPPdnoLw/LXOke72dx6S
         XkBw2pzDFVwqNJPgabuFQQ4ySaGZMF7Ayfv8/48/55VHPcqs24LnGHR6QaqB8awL7xUksIPPv8wu824S
         6pRPWfYCh+0VG6gbiYMAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="Telefonos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="entidadesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1300, 17</value>
   </metadata>
@@ -475,9 +472,6 @@
   </metadata>
   <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 17</value>
-  </metadata>
-  <metadata name="getEntiedadesToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>975, 17</value>
   </metadata>
   <metadata name="entidadesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>441, 17</value>
