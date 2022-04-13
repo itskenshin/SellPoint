@@ -62,6 +62,7 @@
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.comboBoxEliminable = new System.Windows.Forms.ComboBox();
             this.ComentarioBoxField = new System.Windows.Forms.TextBox();
+            this.comboBoxGrupoEntidad = new System.Windows.Forms.ComboBox();
             this.direccionField = new SellPoint.widgets.textBox();
             this.localidadField = new SellPoint.widgets.textBox();
             this.numeroDocField = new SellPoint.widgets.textBox();
@@ -72,7 +73,6 @@
             this.btnDelete = new SellPoint.widgets.RJControls();
             this.btnActualizar = new SellPoint.widgets.RJControls();
             this.btnInsert = new SellPoint.widgets.RJControls();
-            this.comboBoxGrupoEntidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).BeginInit();
@@ -407,6 +407,14 @@
             this.ComentarioBoxField.Size = new System.Drawing.Size(180, 139);
             this.ComentarioBoxField.TabIndex = 28;
             // 
+            // comboBoxGrupoEntidad
+            // 
+            this.comboBoxGrupoEntidad.FormattingEnabled = true;
+            this.comboBoxGrupoEntidad.Location = new System.Drawing.Point(1020, 280);
+            this.comboBoxGrupoEntidad.Name = "comboBoxGrupoEntidad";
+            this.comboBoxGrupoEntidad.Size = new System.Drawing.Size(102, 21);
+            this.comboBoxGrupoEntidad.TabIndex = 29;
+            // 
             // direccionField
             // 
             this.direccionField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -596,17 +604,6 @@
             this.btnInsert.TextColor = System.Drawing.Color.White;
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // comboBoxGrupoEntidad
-            // 
-            this.comboBoxGrupoEntidad.FormattingEnabled = true;
-            this.comboBoxGrupoEntidad.Items.AddRange(new object[] {
-            "True",
-            "False"});
-            this.comboBoxGrupoEntidad.Location = new System.Drawing.Point(1020, 280);
-            this.comboBoxGrupoEntidad.Name = "comboBoxGrupoEntidad";
-            this.comboBoxGrupoEntidad.Size = new System.Drawing.Size(102, 21);
-            this.comboBoxGrupoEntidad.TabIndex = 29;
             // 
             // Main_Screen
             // 
