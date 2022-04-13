@@ -289,6 +289,8 @@ namespace SellPoint.forms_screens
             entidadesTabla.Telefonos = phoneField.Texts.ToString();
             return entidadesTabla;
         }
+
+       
     }
 }
 

@@ -42,7 +42,7 @@ namespace SellPoint.forms_screens
         // boton insertar en tabla
         private void insertBtn_Click(object sender, EventArgs e)
         {
-            if (idTippEntidadField.Texts == String.Empty || descripFieldtext.Text == String.Empty)
+            if (comboBoxtipoEntidad.Text == String.Empty)
             {
                 labelvali.Visible = true;
             }
