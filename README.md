@@ -12,7 +12,7 @@ Este repositorio contiene código fuente y consignas a realizar en C#
 
 <br />
 <br />
-# MainScreen
+* MainScreen
 <br /><br />
 ![image](https://user-images.githubusercontent.com/71537694/163285946-6180180e-965b-4057-a0a7-ad2519a6906d.png)
 
