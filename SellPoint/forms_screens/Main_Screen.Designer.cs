@@ -73,6 +73,7 @@
             this.btnDelete = new SellPoint.widgets.RJControls();
             this.btnActualizar = new SellPoint.widgets.RJControls();
             this.btnInsert = new SellPoint.widgets.RJControls();
+            this.usernamelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).BeginInit();
@@ -605,12 +606,23 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // usernamelabel
+            // 
+            this.usernamelabel.AutoSize = true;
+            this.usernamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernamelabel.ForeColor = System.Drawing.Color.White;
+            this.usernamelabel.Location = new System.Drawing.Point(84, 53);
+            this.usernamelabel.Name = "usernamelabel";
+            this.usernamelabel.Size = new System.Drawing.Size(0, 17);
+            this.usernamelabel.TabIndex = 30;
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 536);
             this.ControlBox = false;
+            this.Controls.Add(this.usernamelabel);
             this.Controls.Add(this.comboBoxGrupoEntidad);
             this.Controls.Add(this.ComentarioBoxField);
             this.Controls.Add(this.comboBoxEliminable);
@@ -702,5 +714,6 @@
         private System.Windows.Forms.ComboBox comboBoxEliminable;
         private System.Windows.Forms.TextBox ComentarioBoxField;
         private System.Windows.Forms.ComboBox comboBoxGrupoEntidad;
+        private System.Windows.Forms.Label usernamelabel;
     }
 }
