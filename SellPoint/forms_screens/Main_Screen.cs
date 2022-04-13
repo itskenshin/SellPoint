@@ -47,17 +47,19 @@ namespace SellPoint.forms_screens
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
-            
-            SellPoint.animation.winapi.AnimateWindow(this.Handle, 2000, SellPoint.animation.winapi.BLEND);
+
+            usernamelabel.Text = Login_screen.guardar;
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
             Hora.Parent = pictureBox1;
             Hora.BackColor = Color.Transparent;
             Fecha.Parent = pictureBox1;
             Fecha.BackColor = Color.Transparent;
-            labelUsername.Parent = pictureBox1;
-            labelUsername.BackColor = Color.Transparent;
+            usernamelabel.Parent = pictureBox1;
+            usernamelabel.BackColor = Color.Transparent;
             lblerror.Parent = pictureBox1;
             lblerror.BackColor = Color.Transparent;
             DocNumErr.BackColor = Color.Transparent;
+            
 
         }
         // boton delete para la tabla de base datos
@@ -136,7 +138,7 @@ namespace SellPoint.forms_screens
         // va al mainscreen
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Main_Screen main_Screen = new Main_Screen();
             main_Screen.Show();
 
@@ -166,14 +168,12 @@ namespace SellPoint.forms_screens
         // boton que lleva al login
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Main_Screen ma = new Main_Screen();
-            ma.Show();
+            Application.Restart();
         }
         // boton para salir del programa
         private void BtnSalirr_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
 

@@ -100,13 +100,13 @@ namespace SellPoint.forms_screens
         //boton para salir del programa
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         // boton para ir a la pantalla de registro
         private void regibtn_Click(object sender, EventArgs e)
         {
 
-            this.Visible = false;
+            this.Hide();
             Main_Screen r = new Main_Screen();
             r.Show();
         }
