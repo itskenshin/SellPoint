@@ -72,6 +72,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.Salirbtn);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Acerca_de_Screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Acerca_de_Screen_Load);
