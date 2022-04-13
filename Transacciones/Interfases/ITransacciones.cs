@@ -8,15 +8,20 @@ using System.Threading.Tasks;
 
 namespace Transacciones.Interfases
 {
-    public  interface ITransacciones
+    public  interface ITransacciones 
     {
         
         Entidades Autenticacion(string user, string password);
         bool AgregarEntidad(Entidades entidades);
         Entidades VerEntidad(string user);
         bool EliminarEntidades(string user);
-        List<Entidades> ListaEntidades();
-        Entidades ActualizarEntidad(string user);
+        List<EntidadesTabla> ListaEntidades();
+        bool ActualizarEntidad(EntidadesTabla entidades,string UserEntidad,string pass);
+
+        EntidadesTabla BuscarEntidad(string UsernameEntidad);
+
+        int GetUsernaemEntidadId(string usernameEntidad);
+        string GetPassowrdmEntidad(int id);
 
 
     }
