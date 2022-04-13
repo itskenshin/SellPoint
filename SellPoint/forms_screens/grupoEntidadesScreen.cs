@@ -31,6 +31,7 @@ namespace SellPoint.forms_screens
 
         private void grupoEntidadesScreen_Load(object sender, EventArgs e)
         {
+            labelUsuario.Text = Login_screen.guardar;
             SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
             labelValidation.Parent = pictureBox1;
             labelValidation.BackColor = Color.Transparent;

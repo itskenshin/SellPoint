@@ -16,7 +16,7 @@ namespace SellPoint.forms_screens
     public partial class Login_screen : Form
     {
 
-        
+        public static String guardar;
         public Transacciones.Transacciones _transacciones = new Transacciones.Transacciones();
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -82,14 +82,15 @@ namespace SellPoint.forms_screens
                 if (result != null)
                 {
                     if (result.UserNameEntidad == username_box.Texts && result.PasswordEntidad == pass_field.Texts)
-                    {
+                    {   
+                        guardar = username_box.Texts;
                         this.Hide();
                         Main_Screen main = new Main_Screen();
                         main.Show();
 
                     }
                     else
-                    {
+                    { MessageBox.Show("Este usuario no existe! Por favor Introduzca los credenciales correctos.");
                         uservalidlabel.Visible = true;
                     }
                 }

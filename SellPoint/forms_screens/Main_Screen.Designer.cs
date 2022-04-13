@@ -34,7 +34,6 @@
             this.Fecha = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnback = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.entidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -67,7 +66,6 @@
             this.btnInsert = new SellPoint.widgets.RJControls();
             this.DocNumErr = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet1)).BeginInit();
@@ -113,28 +111,15 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
-            this.btnback.Location = new System.Drawing.Point(12, 503);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(23, 21);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnback.TabIndex = 6;
-            this.btnback.TabStop = false;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.SystemColors.Control;
             this.labelUsername.Location = new System.Drawing.Point(64, 53);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(136, 17);
+            this.labelUsername.Size = new System.Drawing.Size(0, 20);
             this.labelUsername.TabIndex = 7;
-            this.labelUsername.Text = "aqui va el username";
             // 
             // dataGridView
             // 
@@ -548,7 +533,6 @@
             this.Controls.Add(this.passField);
             this.Controls.Add(this.usernameField);
             this.Controls.Add(this.labelUsername);
-            this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnInsert);
@@ -561,7 +545,6 @@
             this.Text = "Main_Screen";
             this.Load += new System.EventHandler(this.Main_Screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet1)).EndInit();
@@ -582,7 +565,6 @@
         private widgets.RJControls btnInsert;
         private widgets.RJControls btnActualizar;
         private widgets.RJControls btnDelete;
-        private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.Label labelUsername;
         private widgets.textBox usernameField;
         private widgets.textBox passField;
