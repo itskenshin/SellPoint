@@ -198,6 +198,7 @@
             this.Controls.Add(this.pass_field);
             this.Controls.Add(this.username_box);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login_screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_screen_Load);

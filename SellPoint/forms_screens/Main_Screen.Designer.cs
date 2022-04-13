@@ -609,7 +609,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 536);
+            this.ClientSize = new System.Drawing.Size(1149, 536);
             this.ControlBox = false;
             this.Controls.Add(this.comboBoxGrupoEntidad);
             this.Controls.Add(this.ComentarioBoxField);
@@ -639,6 +639,7 @@
             this.Controls.Add(this.Hora);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main_Screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main_Screen";
