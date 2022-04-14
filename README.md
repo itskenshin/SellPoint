@@ -8,14 +8,15 @@ Este repositorio contiene código fuente y consignas a realizar en C#
 <br />
 Login:
 <br /><br />
-![image](https://user-images.githubusercontent.com/71537694/163285334-a7c3a5b7-48e6-49ba-95cd-0a70d913c6ba.png)
+
 
 <br />![2022-04-14 17_00_57-](https://user-images.githubusercontent.com/71537694/163474652-cb013ffb-cc8a-4524-8358-75caaa4658f3.png)
 
 <br />
 MainScreen
 <br /><br />
-![image](https://user-images.githubusercontent.com/71537694/163285946-6180180e-965b-4057-a0a7-ad2519a6906d.png)
+![2022-04-14 17_02_29-](https://user-images.githubusercontent.com/71537694/163474853-56ba6915-b5c7-4b12-894d-d1c055d0531b.png)
+
 
 
 <br />
