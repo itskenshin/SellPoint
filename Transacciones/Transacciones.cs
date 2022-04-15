@@ -24,22 +24,22 @@ namespace Transacciones
             _command = _db._command;
         }
 
-        public bool ActualizarEntidad(EntidadesTabla entidadesTabla,string UserEntidad,string pass)
+        public bool ActualizarEntidad(EntidadesTabla entidadesTabla, string UserEntidad, string pass)
         {
             var id = GetUsernaemEntidadId(UserEntidad);
             var password = GetPassowrdmEntidad(id);
-            
-                _db.OpenConnection();
-                var query = "UPDATE [dbo].Entidades SET [Descripcion] = " + "'" + entidadesTabla.Descripcion + "'" + ", [Direccion] = " + "'" + entidadesTabla.Direccion + "'" + " , [Localidad] = " + "'" + entidadesTabla.Localidad + "'" + ", [NumeroDocumento] = " + "'" + entidadesTabla.NumeroDocumento + "'" + ", [Telefonos] =" + "'" + entidadesTabla.Telefonos + "'" + ", [UserNameEntidad] =" + "'" + entidadesTabla.UserNameEntidad + "'" + ", [PassworEntidad] = " + "'" + pass + "'" + " WHERE id_Entidad = " + id;
-                var command = new SqlCommand(query, _db._connection);
-                command.ExecuteNonQuery();
+
+            _db.OpenConnection();
+            var query = "UPDATE [dbo].Entidades SET [Descripcion] = " + "'" + entidadesTabla.Descripcion + "'" + ", [Direccion] = " + "'" + entidadesTabla.Direccion + "'" + " , [Localidad] = " + "'" + entidadesTabla.Localidad + "'" + ", [NumeroDocumento] = " + "'" + entidadesTabla.NumeroDocumento + "'" + ", [Telefonos] =" + "'" + entidadesTabla.Telefonos + "'" + ", [UserNameEntidad] =" + "'" + entidadesTabla.UserNameEntidad + "'" + ", [PassworEntidad] = " + "'" + pass + "'" + " WHERE id_Entidad = " + id;
+            var command = new SqlCommand(query, _db._connection);
+            command.ExecuteNonQuery();
 
 
-                _db.CloseConnection();
-            
+            _db.CloseConnection();
 
-          
-            
+
+
+
             return true;
 
         }
@@ -76,7 +76,7 @@ namespace Transacciones
             _db._connection.Close();
             if (result > 0) return true;
             else return false;
-            
+
         }
 
         public Entidades Autenticacion(string user, string password)
@@ -113,7 +113,7 @@ namespace Transacciones
         {
             EntidadesTabla entidadesTabla = new EntidadesTabla();
 
-            
+
             _db.OpenConnection();
             var command = _db._command;
             command.CommandText = "usp_EntidadesSelect";
@@ -133,7 +133,7 @@ namespace Transacciones
                     Telefonos = result["Telefonos"].ToString()
                 };
                 entidadesTabla = ent;
-               
+
             }
             _db.CloseConnection();
             return entidadesTabla;
@@ -148,9 +148,9 @@ namespace Transacciones
         {
             int Id = 0;
             _db.OpenConnection();
-            var query = "select id_Entidad from Entidades where UserNameEntidad = " +"'" + usernameEntidad + "'";
-            var command = new SqlCommand(query,_db._connection);
-          var reader =  command.ExecuteReader();
+            var query = "select id_Entidad from Entidades where UserNameEntidad = " + "'" + usernameEntidad + "'";
+            var command = new SqlCommand(query, _db._connection);
+            var reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Id = int.Parse(reader["Id_Entidad"].ToString());
@@ -175,37 +175,44 @@ namespace Transacciones
 
         }
 
-        public List<EntidadesTabla> ListaEntidades()
+        public List<Entidades> ListaEntidades()
         {
 
-            List<EntidadesTabla> Entidades = new List<EntidadesTabla>();
-           
+            List<Entidades> Entidades = new List<Entidades>();
+
 
             _db.OpenConnection();
-            var query = "Select t.UserNameEntidad,t.Telefonos,t.NumeroDocumento,t.Descripcion,t.Localidad, t.Direccion  from dbo.Entidades t";
+            var query = "Select t.UserNameEntidad,t.Telefonos,t.NumeroDocumento,t.Descripcion,t.Localidad, t.Direccion ,t.IdGrupoEntidad,t.NoEliminable,t.Status,t.TipoDocumento,t.RolUserEntidad, t.TipoEntidad  from dbo.Entidades t";
             var command = new SqlCommand(query, _db._connection);
-         
-           
-                
-            var result = command.ExecuteReader();      
+
+
+            var result = command.ExecuteReader();
             while (result.Read())
             {
-                EntidadesTabla ent =  new EntidadesTabla()
+                Entidades ent = new Entidades()
                 {
                     UserNameEntidad = result["UserNameEntidad"].ToString(),
                     Descripcion = result["Descripcion"].ToString(),
                     Direccion = result["Direccion"].ToString(),
                     Localidad = result["Localidad"].ToString(),
                     NumeroDocumento = int.Parse(result["NumeroDocumento"].ToString()),
-                    Telefonos = result["Telefonos"].ToString()
+                    Telefonos = result["Telefonos"].ToString(),
+                    TipoEntidad = result["TipoEntidad"].ToString(),
+                    TipoDocumento = result["TipoDocumento"].ToString(),
+                    RolUserEntidad = result["RolUserEntidad"].ToString(),
+                    Status = result["Status"].ToString(),
+                    NoEliminable = result["NoEliminable"].ToString(),
+                    IdGrupoEntidad = int.Parse(result["IdGrupoEntidad"].ToString())
+
+
                 };
-             Entidades.Add(ent);
+                Entidades.Add(ent);
             }
-            
+
             if (result != null)
             {
                 _db.CloseConnection();
-             
+
                 return Entidades;
             }
             else
@@ -215,8 +222,98 @@ namespace Transacciones
         }
 
         public Entidades VerEntidad(string user)
-{
-    throw new NotImplementedException();
-}
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetTipoEntidades()
+        {
+            List<string> TipoEntidades = new List<string>();
+
+
+            _db.OpenConnection();
+            var query = "select * from TiposEntidades";
+            var command = new SqlCommand(query, _db._connection);
+            var _NoEliminable = false;
+
+            var result = command.ExecuteReader();
+            while (result.Read())
+            {
+                if (result["NoEliminable"].ToString() == "0")
+                {
+                    _NoEliminable = true;
+                }
+                TiposEntidades _TiposEntidades = new TiposEntidades()
+                {
+
+                    Descripcion = result["Descripcion"].ToString(),
+                    //IdGrupoEntidadNavigation = result["IdGrupoEntidad"].ToString();
+
+
+                };
+                TipoEntidades.Add(_TiposEntidades.Descripcion);
+
+            }
+
+            if (result != null)
+            {
+                _db.CloseConnection();
+
+                return TipoEntidades;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public bool ActualizarTipoEntidades(string descripcion, string UsuarioEntidad)
+        {
+
+            _db.OpenConnection();
+            var queryGrupoEntidad = "select t.IdGrupoEntidad from GruposEntidades t where t.descripcion = '" + descripcion + "'";
+            var command = new SqlCommand(queryGrupoEntidad, _db._connection);
+            var reader = command.ExecuteReader();
+            var result = "";
+            var IdGrupoEntidad = 0;
+            var IdTipoEntidad = 0;
+            while (reader.Read())
+            {
+                result = reader["IdGrupoEntidad"].ToString();
+            }
+            IdGrupoEntidad = int.Parse(result);
+            reader.Close();
+
+            var queryTipoEntidad = "select t.idTipoEntidad from TiposEntidades t where t.IdGrupoEntidad = " + IdGrupoEntidad + "";
+            var _command = new SqlCommand(queryTipoEntidad, _db._connection);
+            var _reader = _command.ExecuteReader();
+            var _result = "";
+            while (_reader.Read())
+            {
+                _result = _reader["idTipoEntidad"].ToString();
+            }
+            IdTipoEntidad = int.Parse(_result);
+            _reader.Close();
+            if (result != null)
+            {
+                var id = result;
+                var query = "update Entidades set IdTipoEntidad  = " + IdTipoEntidad + " , IdGrupoEntidad = " + IdGrupoEntidad + "  where UserNameEntidad = '" + UsuarioEntidad + "'";
+                var __command = new SqlCommand(query, _db._connection);
+                var val = __command.ExecuteNonQuery();
+                _db.CloseConnection();
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
     }
+
+
 }

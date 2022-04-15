@@ -63,13 +63,14 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
+            this.labelUsername.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelUsername.ForeColor = System.Drawing.Color.White;
             this.labelUsername.Location = new System.Drawing.Point(92, 72);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(110, 20);
+            this.labelUsername.Size = new System.Drawing.Size(64, 20);
             this.labelUsername.TabIndex = 5;
-            this.labelUsername.Text = "usernameaqui";
+            this.labelUsername.Text = "Usuario";
             // 
             // insertBtn
             // 
@@ -126,10 +127,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 401);
             this.ControlBox = false;
+            this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.comboBoxtipoEntidad);
             this.Controls.Add(this.rjControls1);
             this.Controls.Add(this.insertBtn);
-            this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.labelvali);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -147,9 +148,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelvali;
-        private System.Windows.Forms.Label labelUsername;
         private widgets.RJControls insertBtn;
         private widgets.RJControls rjControls1;
         private System.Windows.Forms.ComboBox comboBoxtipoEntidad;
+        private System.Windows.Forms.Label labelUsername;
     }
 }

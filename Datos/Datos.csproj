@@ -40,7 +40,6 @@
     <Compile Include="Modelos\Entidades.cs" />
     <Compile Include="Modelos\GrupoEntidades.cs" />
     <Compile Include="Modelos\GruposEntidades.cs" />
-    <Compile Include="Modelos\TipoEntidades.cs" />
     <Compile Include="Modelos\TiposEntidades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

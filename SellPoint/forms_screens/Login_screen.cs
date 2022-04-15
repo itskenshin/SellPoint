@@ -29,7 +29,7 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public Login_screen() 
+        public Login_screen(string user ="") 
         {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
@@ -40,6 +40,7 @@ namespace SellPoint.forms_screens
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             Login_screen login = this;
+            user = this.username_box.Texts;
 
         }
 
@@ -85,7 +86,7 @@ namespace SellPoint.forms_screens
                     {   
                         guardar = username_box.Texts;
                         this.Hide();
-                        Main_Screen main = new Main_Screen();
+                        Main_Screen main = new Main_Screen(this.username_box.Texts);
                         main.Show();
 
                     }
