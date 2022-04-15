@@ -15,6 +15,7 @@ namespace SellPoint.forms_screens
     public partial class Main_Screen : Form
     {
         Transacciones.Transacciones Transacciones = new Transacciones.Transacciones();
+        private string User = "";
         private bool isCollapse;
         private string UserEntidadSelected { get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -27,7 +28,7 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public Main_Screen()
+        public Main_Screen(string user = "")
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -154,7 +155,7 @@ namespace SellPoint.forms_screens
         private void btnTipoEntidades_Click(object sender, EventArgs e)
         {
             // ir al form tipoentidades
-            tipoEntidadesScreen ts = new tipoEntidadesScreen();
+            tipoEntidadesScreen ts = new tipoEntidadesScreen(this.usernameField.Texts);
             ts.Show();
         }
 

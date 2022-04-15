@@ -15,7 +15,7 @@ namespace Transacciones.Interfases
         bool AgregarEntidad(Entidades entidades);
         Entidades VerEntidad(string user);
         bool EliminarEntidades(string user);
-        List<EntidadesTabla> ListaEntidades();
+        List<Entidades> ListaEntidades();
         bool ActualizarEntidad(EntidadesTabla entidades,string UserEntidad,string pass);
 
         EntidadesTabla BuscarEntidad(string UsernameEntidad);
@@ -23,6 +23,10 @@ namespace Transacciones.Interfases
         int GetUsernaemEntidadId(string usernameEntidad);
         string GetPassowrdmEntidad(int id);
 
+        List<string> GetTipoEntidades();
+
+        bool ActualizarTipoEntidades(string descripcion, string userNameEntidad);
+       
 
     }
 }
