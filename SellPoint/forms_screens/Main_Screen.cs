@@ -34,7 +34,7 @@ namespace SellPoint.forms_screens
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-
+            User = user;
             this.dataGridView.DataSource = Transacciones.ListaEntidades();
 
         }
@@ -48,6 +48,9 @@ namespace SellPoint.forms_screens
 
         private void Main_Screen_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sellPointDataSet11.GruposEntidades' table. You can move, or remove it, as needed.
+          
+            this.comboBoxGrupoEntidad.DataSource = Transacciones.GetGrupoEntidades();
 
             usernamelabel.Text = Login_screen.guardar;
             SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
@@ -66,7 +69,12 @@ namespace SellPoint.forms_screens
         // boton delete para la tabla de base datos
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selected = this.dataGridView.SelectedCells[0];
+          var datos =  CaputrarDatos();
+            var usuario = datos.UserNameEntidad.ToString();
+
+            var res = Transacciones.EliminarEntidad(usuario);
+            ActualizarTabla();
+
         }
         // Boton insertar en la tabla base de datos
         private void btnInsert_Click(object sender, EventArgs e)
@@ -99,6 +107,14 @@ namespace SellPoint.forms_screens
                     entidades.NumeroDocumento = int.Parse(numeroDocField.Texts);
                     entidades.Localidad = localidadField.Texts;
                     entidades.Descripcion = descripcionField.Texts;
+                    entidades.TipoEntidad = comboBoxTipoEntidad.SelectedItem.ToString();
+                    entidades.TipoDocumento = comboBoxTipoDocumento.SelectedItem.ToString();
+                    entidades.RolUserEntidad = comboBoxUserRol.SelectedItem.ToString();
+                    entidades.Status = comboBoxStatus.SelectedItem.ToString();
+                    entidades.NoEliminable = comboBoxEliminable.SelectedItem.ToString();
+                    entidades.IdGrupoEntidad = Transacciones.GrupoEntidadesSearch(comboBoxGrupoEntidad.SelectedItem.ToString());
+                    entidades.IdTipoEntidad = Transacciones.GetTipoEntidadIdByGrupoEntidadId(entidades.IdGrupoEntidad);
+                    entidades.Comentario = ComentarioBoxField.Text;
                     Transacciones.AgregarEntidad(entidades);
                     var messageValue = MessageBox.Show("Se Agrego Exitosamente la Entidad ",
                                          "Confirmar",
@@ -148,7 +164,7 @@ namespace SellPoint.forms_screens
         private void btnGrupoEntidades_Click(object sender, EventArgs e)
         {
             // ir al form grupo entidades
-            grupoEntidadesScreen gr = new grupoEntidadesScreen();
+            grupoEntidadesScreen gr = new grupoEntidadesScreen(User);
             gr.Show();
         }
 
@@ -256,7 +272,7 @@ namespace SellPoint.forms_screens
         {
             LimpiarCampos();
             var d = dataGridView.Rows[e.RowIndex];
-            var UserNameEntidad = d.Cells[5].Value.ToString();
+            var UserNameEntidad = d.Cells[16].Value.ToString();
             UserEntidadSelected = UserNameEntidad;
             var resultados = Transacciones.BuscarEntidad(UserNameEntidad);
 
@@ -266,6 +282,13 @@ namespace SellPoint.forms_screens
             localidadField.Texts = resultados.Localidad;
             direccionField.Texts = resultados.Direccion;
             numeroDocField.Texts = resultados.NumeroDocumento.ToString();
+            comboBoxTipoEntidad.Text = resultados.TipoEntidad.ToString();
+            comboBoxTipoDocumento.Text = resultados.TipoDocumento.ToString();
+            comboBoxUserRol.Text = resultados.RolUserEntidad.ToString();
+            comboBoxStatus.Text = resultados.Status.ToString();
+            comboBoxEliminable.Text = resultados.NoEliminable.ToString();
+            comboBoxGrupoEntidad.Text = resultados.IdGrupoEntidad.ToString();
+            ComentarioBoxField.Text = resultados.Comentario.ToString();
 
         }
 
@@ -279,16 +302,25 @@ namespace SellPoint.forms_screens
 
         }
 
-        private EntidadesTabla CaputrarDatos()
+        private Entidades CaputrarDatos()
         {
-            EntidadesTabla entidadesTabla = new EntidadesTabla();
-            entidadesTabla.UserNameEntidad = usernameField.Texts;
-            entidadesTabla.Direccion = direccionField.Texts;
-            entidadesTabla.Localidad = direccionField.Texts;
-            entidadesTabla.Descripcion = descripcionField.Texts;
-            entidadesTabla.NumeroDocumento = int.Parse(numeroDocField.Texts);
-            entidadesTabla.Telefonos = phoneField.Texts.ToString();
-            return entidadesTabla;
+            Entidades entidades = new Entidades();
+            entidades.UserNameEntidad = usernameField.Texts;
+            entidades.Direccion = direccionField.Texts;
+            entidades.Localidad = direccionField.Texts;
+            entidades.Descripcion = descripcionField.Texts;
+            entidades.NumeroDocumento = (int)Int64.Parse(numeroDocField.Texts.ToString());
+            entidades.Telefonos = phoneField.Texts.ToString();
+            entidades.TipoEntidad = comboBoxTipoEntidad.SelectedItem.ToString();
+            entidades.TipoDocumento = comboBoxTipoDocumento.SelectedItem.ToString();
+            entidades.RolUserEntidad = comboBoxUserRol.SelectedItem.ToString();
+            entidades.Status = comboBoxStatus.SelectedItem.ToString();
+            entidades.NoEliminable = comboBoxEliminable.SelectedItem.ToString();
+            entidades.IdGrupoEntidad = Transacciones.GetGrupoEntidadIDByDesc(comboBoxGrupoEntidad.SelectedItem.ToString());
+            entidades.PasswordEntidad = passField.Texts;
+            entidades.Comentario = ComentarioBoxField.Text;
+            entidades.IdTipoEntidad = Transacciones.GetTipoEntidadIdByGrupoEntidadId(entidades.IdGrupoEntidad);
+            return entidades;
         }
 
        

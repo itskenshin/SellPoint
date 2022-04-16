@@ -16,17 +16,35 @@ namespace Transacciones.Interfases
         Entidades VerEntidad(string user);
         bool EliminarEntidades(string user);
         List<Entidades> ListaEntidades();
-        bool ActualizarEntidad(EntidadesTabla entidades,string UserEntidad,string pass);
+        bool ActualizarEntidad(Entidades entidades,string UserEntidad,string pass);
 
-        EntidadesTabla BuscarEntidad(string UsernameEntidad);
+        Entidades BuscarEntidad(string UsernameEntidad);
 
         int GetUsernaemEntidadId(string usernameEntidad);
         string GetPassowrdmEntidad(int id);
 
         List<string> GetTipoEntidades();
+        List<string> GetGrupoEntidades();
 
-        bool ActualizarTipoEntidades(string descripcion, string userNameEntidad);
-       
+        bool ActualizarTipoEntidades(string descripcion, string userNameEntidad,string user);
+         int? GetTipoEntidadIdByGrupoEntidadId(int? grupoEntidadId);
+        List<GruposEntidades> GrupoEntidadesLista();
+
+        Tuple<int, string> GetGrupoIdByUsuario(string usernameEntidad);
+
+        int GetGrupoEntidadIDByDesc(string descripcion);
+
+
+        bool EliminarEntidad(string user);
+
+        bool InsertarGrupoEntidad(GruposEntidades grupoEntidades);
+        bool EliminarGrupoEntidad(int id);
+        bool ActulizarGrupoEntidad(GruposEntidades gruposEntidades);
+
+
+
+
+
 
     }
 }

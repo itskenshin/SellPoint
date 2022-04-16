@@ -481,7 +481,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPUAAAIXCAYAAABEohjFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAFtlJREFUeF7t2oFR41q2RuGX0k2AACAACAACYAIggCGAIQECgAAgAAgAAoAASMBv
+        DAAACwwBP0AiyAAAFtlJREFUeF7t2oFR41q2RuGX0k2AACAACAACYAIggCGAIQECgAAgAAgAAoAASMBv
         lqs2tfv0ARvb7WZ+lqq+wtaRjuQuLUtw7//9888/C0k5jFoKY9RSGKOWwhi1FMaopTBGLYUxaimMUUth
         jFoKY9RSGKOWwhi1FMaopTBGLYUxaimMUUthjFoKY9RSGKOWwhi1FMaopTBGLYUx6v86ODiYri+Mr9pm
         laOjo+l6adc2jvry8nLx8PAwdX5+vjg7O1uwnJycTPffxPX19YfHm22/Dj7H29vbp9FeXFwsHh8fp2Pr
@@ -582,6 +582,15 @@
         QmCC
 </value>
   </data>
+  <metadata name="gruposEntidadesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>171, 56</value>
+  </metadata>
+  <metadata name="sellPointDataSet11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="gruposEntidadesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>393, 56</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIACgHAAAZgAAAICAAAABACAAKAgBAAYdAABAQAAAAQAgAChCAAAuJQEAMDAAAAEA

@@ -55,7 +55,7 @@ namespace SellPoint.forms_screens
             }
             else
             {
-             resulado = Transacciones.ActualizarTipoEntidades(this.comboBoxtipoEntidad.SelectedItem.ToString(), comboBoxtipoEntidad.Text);
+             resulado = Transacciones.ActualizarTipoEntidades(this.comboBoxtipoEntidad.SelectedItem.ToString(), comboBoxtipoEntidad.Text,labelUsername.Text);
             }
             if (resulado)
             {
