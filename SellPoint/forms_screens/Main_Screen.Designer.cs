@@ -74,6 +74,9 @@
             this.btnActualizar = new SellPoint.widgets.RJControls();
             this.btnInsert = new SellPoint.widgets.RJControls();
             this.usernamelabel = new System.Windows.Forms.Label();
+            this.sellPointDataSet11 = new SellPoint.SellPointDataSet1();
+            this.gruposEntidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gruposEntidadesTableAdapter = new SellPoint.SellPointDataSet1TableAdapters.GruposEntidadesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource1)).BeginInit();
@@ -83,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposEntidadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Hora
@@ -410,11 +415,15 @@
             // 
             // comboBoxGrupoEntidad
             // 
+            this.comboBoxGrupoEntidad.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.gruposEntidadesBindingSource, "IdGrupoEntidad", true));
+            this.comboBoxGrupoEntidad.DataSource = this.gruposEntidadesBindingSource;
+            this.comboBoxGrupoEntidad.DisplayMember = "Descripcion";
             this.comboBoxGrupoEntidad.FormattingEnabled = true;
             this.comboBoxGrupoEntidad.Location = new System.Drawing.Point(1020, 280);
             this.comboBoxGrupoEntidad.Name = "comboBoxGrupoEntidad";
             this.comboBoxGrupoEntidad.Size = new System.Drawing.Size(102, 21);
             this.comboBoxGrupoEntidad.TabIndex = 29;
+            this.comboBoxGrupoEntidad.ValueMember = "IdGrupoEntidad";
             // 
             // direccionField
             // 
@@ -616,6 +625,20 @@
             this.usernamelabel.Size = new System.Drawing.Size(0, 17);
             this.usernamelabel.TabIndex = 30;
             // 
+            // sellPointDataSet11
+            // 
+            this.sellPointDataSet11.DataSetName = "SellPointDataSet1";
+            this.sellPointDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gruposEntidadesBindingSource
+            // 
+            this.gruposEntidadesBindingSource.DataMember = "GruposEntidades";
+            this.gruposEntidadesBindingSource.DataSource = this.sellPointDataSet11;
+            // 
+            // gruposEntidadesTableAdapter
+            // 
+            this.gruposEntidadesTableAdapter.ClearBeforeFill = true;
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -665,6 +688,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.entidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposEntidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,5 +740,8 @@
         private System.Windows.Forms.TextBox ComentarioBoxField;
         private System.Windows.Forms.ComboBox comboBoxGrupoEntidad;
         private System.Windows.Forms.Label usernamelabel;
+        private SellPointDataSet1 sellPointDataSet11;
+        private System.Windows.Forms.BindingSource gruposEntidadesBindingSource;
+        private SellPointDataSet1TableAdapters.GruposEntidadesTableAdapter gruposEntidadesTableAdapter;
     }
 }
