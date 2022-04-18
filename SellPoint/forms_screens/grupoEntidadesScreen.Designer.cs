@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(grupoEntidadesScreen));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idGrupoFieldtext = new SellPoint.widgets.textBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btninsert = new SellPoint.widgets.RJControls();
             this.btndelete = new SellPoint.widgets.RJControls();
@@ -39,6 +38,9 @@
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelValidation = new System.Windows.Forms.Label();
             this.atrasbtn = new SellPoint.widgets.RJControls();
+            this.comentarioField = new System.Windows.Forms.TextBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxNoElimini = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,25 +53,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(762, 363);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // idGrupoFieldtext
-            // 
-            this.idGrupoFieldtext.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.idGrupoFieldtext.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.idGrupoFieldtext.BorderFocusColor = System.Drawing.Color.Red;
-            this.idGrupoFieldtext.BorderSize = 2;
-            this.idGrupoFieldtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idGrupoFieldtext.ForeColor = System.Drawing.Color.DimGray;
-            this.idGrupoFieldtext.Location = new System.Drawing.Point(13, 145);
-            this.idGrupoFieldtext.Margin = new System.Windows.Forms.Padding(4);
-            this.idGrupoFieldtext.Multiline = false;
-            this.idGrupoFieldtext.Name = "idGrupoFieldtext";
-            this.idGrupoFieldtext.Padding = new System.Windows.Forms.Padding(7);
-            this.idGrupoFieldtext.PasswordChar = false;
-            this.idGrupoFieldtext.Size = new System.Drawing.Size(276, 31);
-            this.idGrupoFieldtext.TabIndex = 1;
-            this.idGrupoFieldtext.Texts = "";
-            this.idGrupoFieldtext.UnderlineStyle = false;
             // 
             // dataGridView1
             // 
@@ -139,10 +122,10 @@
             // 
             // descripcionbox
             // 
-            this.descripcionbox.Location = new System.Drawing.Point(13, 200);
+            this.descripcionbox.Location = new System.Drawing.Point(12, 142);
             this.descripcionbox.Multiline = true;
             this.descripcionbox.Name = "descripcionbox";
-            this.descripcionbox.Size = new System.Drawing.Size(266, 121);
+            this.descripcionbox.Size = new System.Drawing.Size(266, 41);
             this.descripcionbox.TabIndex = 7;
             // 
             // labelUsuario
@@ -161,7 +144,7 @@
             this.labelValidation.AutoSize = true;
             this.labelValidation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValidation.ForeColor = System.Drawing.Color.Red;
-            this.labelValidation.Location = new System.Drawing.Point(67, 324);
+            this.labelValidation.Location = new System.Drawing.Point(474, 279);
             this.labelValidation.Name = "labelValidation";
             this.labelValidation.Size = new System.Drawing.Size(115, 18);
             this.labelValidation.TabIndex = 9;
@@ -187,12 +170,47 @@
             this.atrasbtn.UseVisualStyleBackColor = false;
             this.atrasbtn.Click += new System.EventHandler(this.atrasbtn_Click);
             // 
+            // comentarioField
+            // 
+            this.comentarioField.Location = new System.Drawing.Point(12, 214);
+            this.comentarioField.Multiline = true;
+            this.comentarioField.Name = "comentarioField";
+            this.comentarioField.Size = new System.Drawing.Size(266, 31);
+            this.comentarioField.TabIndex = 11;
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "Activa",
+            "Inactiva"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(70, 256);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.TabIndex = 12;
+            this.comboBoxStatus.Text = "Activa ";
+            // 
+            // comboBoxNoElimini
+            // 
+            this.comboBoxNoElimini.FormattingEnabled = true;
+            this.comboBoxNoElimini.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.comboBoxNoElimini.Location = new System.Drawing.Point(112, 319);
+            this.comboBoxNoElimini.Name = "comboBoxNoElimini";
+            this.comboBoxNoElimini.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxNoElimini.TabIndex = 13;
+            this.comboBoxNoElimini.Text = "False";
+            // 
             // grupoEntidadesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 362);
             this.ControlBox = false;
+            this.Controls.Add(this.comboBoxNoElimini);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.comentarioField);
             this.Controls.Add(this.atrasbtn);
             this.Controls.Add(this.labelValidation);
             this.Controls.Add(this.labelUsuario);
@@ -201,7 +219,6 @@
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btninsert);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.idGrupoFieldtext);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -219,7 +236,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private widgets.textBox idGrupoFieldtext;
         private System.Windows.Forms.DataGridView dataGridView1;
         private widgets.RJControls btninsert;
         private widgets.RJControls btndelete;
@@ -228,5 +244,8 @@
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label labelValidation;
         private widgets.RJControls atrasbtn;
+        private System.Windows.Forms.TextBox comentarioField;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.ComboBox comboBoxNoElimini;
     }
 }

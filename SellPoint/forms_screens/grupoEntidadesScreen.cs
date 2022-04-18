@@ -49,7 +49,7 @@ namespace SellPoint.forms_screens
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            if (idGrupoFieldtext.Texts == String.Empty || descripcionbox.Text == String.Empty)
+            if (comentarioField.Text == String.Empty || descripcionbox.Text == String.Empty || comboBoxStatus.Text == String.Empty || comboBoxNoElimini.Text == String.Empty)
             {
                 labelValidation.Visible = true;
             }
@@ -65,6 +65,7 @@ namespace SellPoint.forms_screens
         {
             this.Close();
         }
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {
@@ -106,5 +107,6 @@ namespace SellPoint.forms_screens
             var UserNameEntidad = d.Cells[0].Value.ToString();
             //agregar campos que faltan
         }
+
     }
 }
