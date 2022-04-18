@@ -33,7 +33,7 @@ namespace SellPoint.forms_screens
             labelUsuario.Text = user;
             var value = Transacciones.GetGrupoIdByUsuario(user);
 
-            idGrupoFieldtext.Texts = value.Item1.ToString();
+            //idGrupoFieldtext.Texts = value.Item1.ToString(); este campo lo elimine por que es el primary key se incrementa solo
             descripcionbox.Text = value.Item2.ToString();
         }
 
