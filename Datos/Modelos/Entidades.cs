@@ -75,7 +75,7 @@ namespace Datos.Modelos
         [StringLength(10)]
        
         public string Status { get; set; }
-        public bool? NoEliminable { get; set; }
+        public string NoEliminable { get; set; }
         [Column(TypeName = "date")]
         public DateTime? FechaRegistro { get; set; }
 

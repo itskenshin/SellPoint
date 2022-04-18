@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Transacciones;
+using Datos.Modelos;
+
 namespace SellPoint.forms_screens
 {
     public partial class tipoEntidadesScreen : Form
     {
-
+        Transacciones.Transacciones Transacciones = new Transacciones.Transacciones();
+        List<TiposEntidades> TiposEntidades = new List<TiposEntidades>();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (   // para poner las esquinas redondas
@@ -23,10 +27,12 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public tipoEntidadesScreen()
+        public tipoEntidadesScreen(string value = "")
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+             this.comboBoxtipoEntidad.DataSource = Transacciones.GetTipoEntidades();
+            this.labelUsername.Text = value ?? "Usuario";
         }
 
         private void tipoEntidadesScreen_Load(object sender, EventArgs e)
@@ -42,10 +48,20 @@ namespace SellPoint.forms_screens
         // boton insertar en tabla
         private void insertBtn_Click(object sender, EventArgs e)
         {
+            bool resulado = false;
             if (comboBoxtipoEntidad.Text == String.Empty)
             {
                 labelvali.Visible = true;
             }
+            else
+            {
+             resulado = Transacciones.ActualizarTipoEntidades(this.comboBoxtipoEntidad.SelectedItem.ToString(), comboBoxtipoEntidad.Text,labelUsername.Text);
+            }
+            if (resulado)
+            {
+                MessageBox.Show(" Tipo Entidad Actualizada");
+            }
+
         }
         // boton actualizar
         private void actualiozabtn_Click(object sender, EventArgs e)

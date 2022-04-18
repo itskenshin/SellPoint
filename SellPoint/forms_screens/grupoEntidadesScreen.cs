@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Datos.Modelos;
+
 namespace SellPoint.forms_screens
 {
     public partial class grupoEntidadesScreen : Form
     {
-
+        Transacciones.Transacciones Transacciones = new Transacciones.Transacciones();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -23,10 +25,16 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public grupoEntidadesScreen()
+        public grupoEntidadesScreen(string user = "")
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            dataGridView1.DataSource = Transacciones.GrupoEntidadesLista();
+            labelUsuario.Text = user;
+            var value = Transacciones.GetGrupoIdByUsuario(user);
+
+            idGrupoFieldtext.Texts = value.Item1.ToString();
+            descripcionbox.Text = value.Item2.ToString();
         }
 
         private void grupoEntidadesScreen_Load(object sender, EventArgs e)
@@ -45,11 +53,59 @@ namespace SellPoint.forms_screens
             {
                 labelValidation.Visible = true;
             }
+            var datos = CapturarDatos();
+
+            var resutl = Transacciones.InsertarGrupoEntidad(datos);
+            //agregar message box 
+
+
         }
 
         private void atrasbtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            var datos = CapturarDatos();
+            var result = Transacciones.EliminarGrupoEntidad(0);
+            ActualizarTabla();
+        }
+
+        GruposEntidades CapturarDatos()
+        {
+            GruposEntidades entidades = new GruposEntidades();
+            //agregar los textbox que faltan 
+
+
+
+
+
+            ActualizarTabla();
+            return entidades;
+
+        }
+        private void ActualizarTabla()
+        {
+            var dataSource = Transacciones.GrupoEntidadesLista();
+            this.dataGridView1.DataSource = dataSource;
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+            var datos = CapturarDatos();
+            var resultados = Transacciones.ActulizarGrupoEntidad(datos);
+            //mostrar messagebox que se actualizo 
+            ActualizarTabla();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var d = dataGridView1.Rows[e.RowIndex];
+            var UserNameEntidad = d.Cells[0].Value.ToString();
+            //agregar campos que faltan
         }
 
     }

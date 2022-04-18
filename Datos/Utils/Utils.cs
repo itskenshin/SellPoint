@@ -31,5 +31,15 @@ namespace Datos.Utils
         public static string NoEliminable = "@NoEliminable";
         public static string FechaRegistro = "@FechaRegistro";
         public static string Id_Entidad = "@id_Entidad";
+        public static string IdTipoEntidad = "@IdTipoEntidad";
+
+        public static string GrupoEntidades_Descripcion = "@Descripcion";
+        public static string GrupoEntidades_Comentario = "@Comentario";
+        public static string GrupoEntidades_Status = "@FechaRegistro";
+        public static string GrupoEntidades_NoEliminable = "@NoEliminable";
+        public static string GrupoEntidades_FechaRegistro = "@FechaRegistro";
+        public static string GrupoEntidades_IdGrupoEntidad = "@FechaRegistro";
+
+
     }
 }

@@ -61,6 +61,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(349, 215);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btninsert
             // 
@@ -98,6 +99,7 @@
             this.btndelete.Text = "ELIMINAR";
             this.btndelete.TextColor = System.Drawing.Color.White;
             this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnactualizar
             // 
@@ -116,6 +118,7 @@
             this.btnactualizar.Text = "ACTUALIZAR";
             this.btnactualizar.TextColor = System.Drawing.Color.White;
             this.btnactualizar.UseVisualStyleBackColor = false;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // descripcionbox
             // 
