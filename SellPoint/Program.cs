@@ -19,7 +19,7 @@ namespace SellPoint
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new grupoEntidadesScreen());
+            Application.Run(new Login_screen());
 
 
         }

@@ -343,7 +343,7 @@ namespace Transacciones
             IdGrupoEntidad = int.Parse(result);
             reader.Close();
 
-            var queryTipoEntidad = "select t.idTipoEntidad from TiposEntidades t where t.IdGrupoEntidad = " + IdGrupoEntidad + "";
+            var queryTipoEntidad = "select t.idTipoEntidad from TiposEntidades t where t.Descripcion = '" + descripcion + "'";
             var _command = new SqlCommand(queryTipoEntidad, _db._connection);
             var _reader = _command.ExecuteReader();
             var _result = "";
@@ -502,7 +502,7 @@ namespace Transacciones
 
         public bool InsertarGrupoEntidad(GruposEntidades grupoEntidades)
         {
-
+            _command.Parameters.Clear();
             _db.OpenConnection();
             _command.CommandText = "usp_GruposEntidadesInsert";
             _command.CommandType = CommandType.StoredProcedure;
@@ -510,7 +510,7 @@ namespace Transacciones
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_Descripcion,grupoEntidades.Descripcion);
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_NoEliminable,grupoEntidades.NoEliminable);
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_Status,grupoEntidades.Status);
-            _command.Parameters.AddWithValue(Utils.GrupoEntidades_IdGrupoEntidad,grupoEntidades.IdGrupoEntidad);
+            _command.Parameters.AddWithValue(Utils.GrupoEntidades_FechaRegistro, DateTime.Now.ToShortDateString());
             var result = _command.ExecuteNonQuery();
             if (result == 0)
             {
@@ -524,13 +524,13 @@ namespace Transacciones
             }
         }
 
-        public bool EliminarGrupoEntidad(int id)
+        public bool EliminarGrupoEntidad(string descripcion)
         {
 
             _db.OpenConnection();
-            _command.CommandText = "usp_TiposEntidadesDelete";
+            _command.CommandText = "usp_GruposEntidadesDelete";
             _command.CommandType = CommandType.StoredProcedure;
-            _command.Parameters.AddWithValue("@idTipoEntidad", id);
+            _command.Parameters.AddWithValue(Utils.GrupoEntidades_Descripcion, descripcion);
             
             var result = _command.ExecuteNonQuery();
             if (result == 0)
@@ -545,17 +545,17 @@ namespace Transacciones
             }
         }
 
-        public bool ActulizarGrupoEntidad(GruposEntidades gruposEntidades)
+        public bool ActulizarGrupoEntidad(GruposEntidades gruposEntidades,string _descripcion)
         {
 
             _db.OpenConnection();
             _command.CommandText = "usp_GruposEntidadesUpdate";
             _command.CommandType = CommandType.StoredProcedure;
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_Comentario, gruposEntidades.Comentario);
+            _command.Parameters.AddWithValue("@_Descripcion", _descripcion);
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_Descripcion, gruposEntidades.Descripcion);
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_NoEliminable, gruposEntidades.NoEliminable);
             _command.Parameters.AddWithValue(Utils.GrupoEntidades_Status, gruposEntidades.Status);
-            _command.Parameters.AddWithValue(Utils.GrupoEntidades_IdGrupoEntidad, gruposEntidades.IdGrupoEntidad);
 
             var result = _command.ExecuteNonQuery();
             if (result == 0)

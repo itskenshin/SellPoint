@@ -35,7 +35,7 @@ namespace Datos.Utils
 
         public static string GrupoEntidades_Descripcion = "@Descripcion";
         public static string GrupoEntidades_Comentario = "@Comentario";
-        public static string GrupoEntidades_Status = "@FechaRegistro";
+        public static string GrupoEntidades_Status = "@Status";
         public static string GrupoEntidades_NoEliminable = "@NoEliminable";
         public static string GrupoEntidades_FechaRegistro = "@FechaRegistro";
         public static string GrupoEntidades_IdGrupoEntidad = "@FechaRegistro";
