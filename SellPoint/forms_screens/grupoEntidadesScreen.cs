@@ -15,6 +15,7 @@ namespace SellPoint.forms_screens
     public partial class grupoEntidadesScreen : Form
     {
         Transacciones.Transacciones Transacciones = new Transacciones.Transacciones();
+        public string _Descripcion{ get; set; }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -58,7 +59,7 @@ namespace SellPoint.forms_screens
             var resutl = Transacciones.InsertarGrupoEntidad(datos);
             //agregar message box 
 
-
+            ActualizarTabla();
         }
 
         private void atrasbtn_Click(object sender, EventArgs e)
@@ -70,14 +71,25 @@ namespace SellPoint.forms_screens
         private void btndelete_Click(object sender, EventArgs e)
         {
             var datos = CapturarDatos();
-            var result = Transacciones.EliminarGrupoEntidad(0);
+            var result = Transacciones.EliminarGrupoEntidad(datos.Descripcion);
             ActualizarTabla();
         }
 
         GruposEntidades CapturarDatos()
         {
             GruposEntidades entidades = new GruposEntidades();
-            //agregar los textbox que faltan 
+            entidades.Descripcion = descripcionbox.Text;
+            entidades.Comentario = comentarioField.Text;
+            entidades.Status = comboBoxStatus.SelectedItem.ToString();
+            if(comboBoxNoElimini.SelectedItem.ToString() == "False")
+            {
+                entidades.NoEliminable = "0";
+            }
+            else
+            {
+                entidades.NoEliminable = "1";
+            }
+            
 
 
 
@@ -96,7 +108,7 @@ namespace SellPoint.forms_screens
         private void btnactualizar_Click(object sender, EventArgs e)
         {
             var datos = CapturarDatos();
-            var resultados = Transacciones.ActulizarGrupoEntidad(datos);
+            var resultados = Transacciones.ActulizarGrupoEntidad(datos,_Descripcion);
             //mostrar messagebox que se actualizo 
             ActualizarTabla();
         }
@@ -104,8 +116,24 @@ namespace SellPoint.forms_screens
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var d = dataGridView1.Rows[e.RowIndex];
-            var UserNameEntidad = d.Cells[0].Value.ToString();
-            //agregar campos que faltan
+            var IdGrupoEntidad = d.Cells[0].Value.ToString();
+            var Descripcion = d.Cells[1].Value.ToString();
+            var Comentario = d.Cells[2].Value.ToString();
+            var Status = d.Cells[3].Value.ToString();
+            var NoEliminable = d.Cells[4].Value.ToString();
+          _Descripcion= d.Cells[1].Value.ToString();
+            descripcionbox.Text = Descripcion;
+            comentarioField.Text = Comentario;
+            comboBoxStatus.SelectedItem = Status;
+            if(NoEliminable == "0")
+            {
+                comboBoxNoElimini.SelectedItem = "False";
+            }
+            else
+            {
+                comboBoxNoElimini.SelectedItem = "True";
+            }
+            
         }
 
     }

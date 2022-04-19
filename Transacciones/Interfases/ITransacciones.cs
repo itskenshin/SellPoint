@@ -38,8 +38,8 @@ namespace Transacciones.Interfases
         bool EliminarEntidad(string user);
 
         bool InsertarGrupoEntidad(GruposEntidades grupoEntidades);
-        bool EliminarGrupoEntidad(int id);
-        bool ActulizarGrupoEntidad(GruposEntidades gruposEntidades);
+        bool EliminarGrupoEntidad(string descripcion);
+        bool ActulizarGrupoEntidad(GruposEntidades gruposEntidades,string _Descripcion);
 
 
 
