@@ -17,7 +17,11 @@ namespace SellPoint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Acerca_de_Screen());
+
+
+            Application.Run(new Login_screen());
+
+
         }
     }
 }

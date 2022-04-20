@@ -90,8 +90,8 @@
             // 
             // regibtn
             // 
-            this.regibtn.BackColor = System.Drawing.Color.DimGray;
-            this.regibtn.BackgroundColor = System.Drawing.Color.DimGray;
+            this.regibtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.regibtn.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.regibtn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.regibtn.BorderRadius = 15;
             this.regibtn.BorderSize = 0;
@@ -105,6 +105,7 @@
             this.regibtn.Text = "Registrate";
             this.regibtn.TextColor = System.Drawing.Color.White;
             this.regibtn.UseVisualStyleBackColor = false;
+            this.regibtn.Click += new System.EventHandler(this.regibtn_Click);
             // 
             // btnSalir
             // 
@@ -127,8 +128,8 @@
             // 
             // btnlogin
             // 
-            this.btnlogin.BackColor = System.Drawing.Color.Gray;
-            this.btnlogin.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnlogin.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnlogin.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnlogin.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnlogin.BorderRadius = 15;
             this.btnlogin.BorderSize = 0;
@@ -197,6 +198,7 @@
             this.Controls.Add(this.pass_field);
             this.Controls.Add(this.username_box);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login_screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_screen_Load);

@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Transacciones;
 
 namespace SellPoint.forms_screens
 {
     public partial class Login_screen : Form
     {
+
+        public static String guardar;
+        public Transacciones.Transacciones _transacciones = new Transacciones.Transacciones();
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -24,15 +29,19 @@ namespace SellPoint.forms_screens
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public Login_screen()
-        { Thread t = new Thread(new ThreadStart(StartForm));
+        public Login_screen(string user ="") 
+        {
+            Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(4000);
-            
+            Thread.Sleep(1500);
+
             InitializeComponent();
             t.Abort();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Login_screen login = this;
+            user = this.username_box.Texts;
+
         }
 
 
@@ -44,17 +53,18 @@ namespace SellPoint.forms_screens
 
         private void Login_screen_Load(object sender, EventArgs e)
         {
+            SellPoint.animation.winapi.AnimateWindow(this.Handle, 1000, SellPoint.animation.winapi.BLEND);
             label_validator_username.Parent = pictureBox1;
             label_validator_username.BackColor = Color.Transparent;
             label_pass_vali.Parent = pictureBox1;
             label_pass_vali.BackColor = Color.Transparent;
             uservalidlabel.Parent = pictureBox1;
             uservalidlabel.BackColor = Color.Transparent;
-            
+
         }
 
-      
 
+        //boton click login 
         private void btnlogin_Click(object sender, EventArgs e)
         {
             if (username_box.Texts == "")
@@ -66,11 +76,46 @@ namespace SellPoint.forms_screens
             {
                 label_pass_vali.Visible = true;
             }
-        }
 
+            if (username_box.Texts != String.Empty && pass_field.Texts != String.Empty)
+            {
+                var result = _transacciones.Autenticacion(user: username_box.Texts, password: pass_field.Texts);
+                if (result != null)
+                {
+                    if (result.UserNameEntidad == username_box.Texts && result.PasswordEntidad == pass_field.Texts)
+                    {   
+                        guardar = username_box.Texts;
+                        this.Hide();
+                        Main_Screen main = new Main_Screen(this.username_box.Texts);
+                        main.Show();
+
+                    }
+                    else
+                    { MessageBox.Show("Este usuario no existe! Por favor Introduzca los credenciales correctos.");
+                        uservalidlabel.Visible = true;
+                    }
+                }
+            }
+
+        }
+        //boton para salir del programa
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
+        // boton para ir a la pantalla de registro
+        private void regibtn_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            Main_Screen r = new Main_Screen();
+            r.Show();
+        }
+
+
+        }
+
+     
+
     }
-}
+
