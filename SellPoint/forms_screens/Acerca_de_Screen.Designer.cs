@@ -30,7 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Acerca_de_Screen));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+
             this.Salirbtn = new SellPoint.widgets.RJControls();
+
+            
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +50,7 @@
             // 
             // Salirbtn
             // 
+
             this.Salirbtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Salirbtn.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Salirbtn.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -62,6 +67,7 @@
             this.Salirbtn.TextColor = System.Drawing.Color.White;
             this.Salirbtn.UseVisualStyleBackColor = false;
             this.Salirbtn.Click += new System.EventHandler(this.rjControls1_Click);
+
             // 
             // Acerca_de_Screen
             // 
@@ -84,6 +90,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
+
         private widgets.RJControls Salirbtn;
+
+        
+
     }
 }
