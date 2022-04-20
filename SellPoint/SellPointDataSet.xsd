@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SellPointDataSet" targetNamespace="http://tempuri.org/SellPointDataSet.xsd" xmlns:mstns="http://tempuri.org/SellPointDataSet.xsd" xmlns="http://tempuri.org/SellPointDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SellPointConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SellPointConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SellPoint.Properties.Settings.GlobalReference.Default.SellPointConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EntidadesTableAdapter" GeneratorDataComponentClassName="EntidadesTableAdapter" Name="Entidades" UserDataComponentName="EntidadesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SellPointConnectionString (Settings)" DbObjectName="SellPoint.dbo.Entidades" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Descripcion, Direccion, Localidad, NumeroDocumento, UserNameEntidad FROM dbo.Entidades</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Direccion" DataSetColumn="Direccion" />
+              <Mapping SourceColumn="Localidad" DataSetColumn="Localidad" />
+              <Mapping SourceColumn="NumeroDocumento" DataSetColumn="NumeroDocumento" />
+              <Mapping SourceColumn="UserNameEntidad" DataSetColumn="UserNameEntidad" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="SellPointConnectionString (Settings)" DbObjectName="SellPoint.dbo.Entidades" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="GetEntidades" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="GetEntidades" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetEntidades">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Descripcion, Direccion, Localidad, NumeroDocumento, UserNameEntidad FROM dbo.Entidades</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SellPointConnectionString (Settings)" DbObjectName="SellPoint.dbo.Entidades" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="GetEntiedades" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="GetEntiedades" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetEntiedades">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        UserNameEntidad, Descripcion, Direccion, Localidad, NumeroDocumento
+FROM            Entidades</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SellPointDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="SellPointDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SellPointDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Entidades" msprop:Generator_RowClassName="EntidadesRow" msprop:Generator_RowEvHandlerName="EntidadesRowChangeEventHandler" msprop:Generator_RowDeletedName="EntidadesRowDeleted" msprop:Generator_RowDeletingName="EntidadesRowDeleting" msprop:Generator_RowEvArgName="EntidadesRowChangeEvent" msprop:Generator_TablePropName="Entidades" msprop:Generator_RowChangedName="EntidadesRowChanged" msprop:Generator_UserTableName="Entidades" msprop:Generator_RowChangingName="EntidadesRowChanging" msprop:Generator_TableClassName="EntidadesDataTable" msprop:Generator_TableVarName="tableEntidades">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="120" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Direccion" msprop:Generator_UserColumnName="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Localidad" msprop:Generator_UserColumnName="Localidad" msprop:Generator_ColumnPropNameInTable="LocalidadColumn" msprop:Generator_ColumnPropNameInRow="Localidad" msprop:Generator_ColumnVarNameInTable="columnLocalidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroDocumento" msprop:Generator_UserColumnName="NumeroDocumento" msprop:Generator_ColumnPropNameInTable="NumeroDocumentoColumn" msprop:Generator_ColumnPropNameInRow="NumeroDocumento" msprop:Generator_ColumnVarNameInTable="columnNumeroDocumento" type="xs:int" />
+              <xs:element name="UserNameEntidad" msprop:Generator_UserColumnName="UserNameEntidad" msprop:Generator_ColumnPropNameInTable="UserNameEntidadColumn" msprop:Generator_ColumnPropNameInRow="UserNameEntidad" msprop:Generator_ColumnVarNameInTable="columnUserNameEntidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
