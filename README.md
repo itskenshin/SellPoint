@@ -19,8 +19,3 @@ Login:
 
 
 
-<br />
-<br />
-# Documentacion:
-<br />
-<br />
